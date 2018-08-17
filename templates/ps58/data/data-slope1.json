@@ -1,0 +1,52 @@
+ {
+    "auto_check": "true",
+    "title": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "Slope 1 Example",
+            "top": 166,
+            "left": 50,
+            "width": "default"
+        }
+    ],
+    "content_box": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "John and Kim wrote down two<br>different functions that have the<br>same rate of change.<br><br>John's function is represented by<br>the table shown.<br><br>[just points temporarily]<br>(-1,-5)<br>(1,-1)<br>(3,3)<br><br>Use the line tool to graph<br>a function that could be Kim's<br>function.",
+            "top": 286,
+            "left": 49,
+            "width": "default"
+        }
+    ],
+    "coordinate_object": [
+        {
+            "coordinate_object_answer": "",
+            "coordinate_object_data": "",
+            "coordinate_object_type": "Line",
+            "object_data_open": "",
+            "connect": "true",
+            "label_x": "x",
+            "label_y": "y",
+            "quadrants": "4",
+            "scale_x": "9",
+            "scale_y": "9",
+            "show_scale": "true",
+            "slope": "2",
+
+            "name": "",
+            "top": "default",
+            "left": "default",
+            "type": "txt",
+            "width": "default"
+        }
+    ],
+    "font_size": 1,
+    "grades": "mid",
+    "iteration": {},
+    "layout": "A",
+    "template": "ps08"
+}

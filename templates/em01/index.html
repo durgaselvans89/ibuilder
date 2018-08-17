@@ -1,0 +1,330 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Learning Object Iteration</title>
+ 		
+	<style type="text/css" media="screen">
+		.txt span {
+			visibility: hidden;
+		}
+	</style>
+	
+	<!-- Keypad CSS -->
+	<link rel="stylesheet" href="css/math_keypad_g1to2.css" type="text/css" media="screen"/>
+  	<link rel="stylesheet" href="css/numeric_keypad_g1to6.css" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="css/full_keypad_g1to2.css" type="text/css" media="screen"/>
+	
+	<script src="js/libs/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/libs/jquery-migrate-1.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/libs/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- Plugins -->
+	<link rel="stylesheet" href="css/tipsy.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script src="js/libs/jquery.tipsy.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="js/libs/soundmanager/script/soundmanager2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/sounds.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/feedback.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="js/em01_app.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/app_dispatcher.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/dispatcher.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/em01_controller.js" type="text/javascript" charset="utf-8"></script>
+
+	<script src="js/pageBuilder.js" type="text/javascript" charset="utf-8"></script>
+	
+	<!-- Keypad JS -->
+	<script type="text/javascript" src="js/keyboardlookup.js"></script>
+	<script type="text/javascript" src="js/keypad.js"></script>
+	
+	<script type="text/javascript" charset="utf-8">
+		
+		function getUrlVars() {
+		    var vars = {};
+		    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		        vars[key] = value;
+		    });
+		    return vars;
+		}
+		
+		var media_path = getUrlVars()["media"];
+		var entryPoint = getUrlVars()["entryPoint"];
+		
+		//document.write('<script src="js/pageBuilder.js" type="text/javascript" charset="utf-8"><\/script>');
+		
+		var mode = 'student';
+		
+		if ( mode == 'student' ) {
+			// add javascript for template mode
+		}
+						
+		if ( media_path == undefined ) {
+			//window.location = "dir.html";
+		}
+		
+	</script>
+	
+</head>
+ 
+<body>
+
+<div id="wrapper">	
+	
+	<div id="contentTEMP"></div>
+			
+<!-- Keypads -->
+	
+	<audio id="sfx_neg" src="sound/SFX_negative.mp3" preload></audio>
+	<audio id="sfx_click" src="sound/SFX_keyboard.mp3" preload></audio>
+		
+	<!-- Keypad 1 -->
+	<div id="math_keypad_G1to2" style="visibility:hidden;">
+		
+		<div class= "dragbar"></div>
+		
+		<div data-id="0"  class="closebutton pointer" ></div>
+			
+		<div class= "display_and_pad">
+			
+			<div class= "displaywindow" >
+				
+			<div data-id="0" class="display" ></div>
+		
+				<div class="fractionholder">	
+			
+					<div data-id="0" class="topfraction"   data-htmlarray= "" ></div>
+					<!-- faked line -->	
+						<div style="left:0px;top:22px;height:1px;width:146px;position:absolute;background-color: #000000"></div>
+					<div data-id="0" class="botfraction"   data-htmlarray= "" ></div>
+				</div>
+			
+				<div class="blinkingcursor"></div>
+				
+			</div>
+			<!--keypad numbers-->
+			<!--top row -->
+			<div class="seven number_symbol_key pointer nodrag">7</div>
+			<div class="eight number_symbol_key pointer nodrag">8</div>
+			<div class="nine number_symbol_key pointer nodrag">9</div>
+			
+			<div class="dollar number_symbol_key pointer disableforfractions">$</div>
+			<div class="cent number_symbol_key pointer disableforfractions">&#162</div>
+			<div class="backspace custom_symbol_key pointer nodrag"></div>
+			
+			<!--row -->
+			<div class="four number_symbol_key pointer nodrag">4</div>
+			<div class="five number_symbol_key pointer nodrag">5</div>
+			<div class="six number_symbol_key pointer nodrag">6</div>
+			
+			<div class="fahrenheit number_symbol_key pointer  disableforfractions">&#8457</div>
+			<div class="celsius number_symbol_key pointer disableforfractions">&#8451</div>
+			<div class="clear custom_symbol_key pointer nodrag"></div>
+			
+			<!--row -->
+			<div class="one number_symbol_key pointer nodrag">1</div>
+			<div class="two number_symbol_key pointer nodrag">2</div>
+			<div class="three number_symbol_key pointer nodrag">3</div>
+			
+			<div class="less_than number_symbol_key pointer nodrag">&#60</div>
+			<div class="greater_than number_symbol_key pointer nodrag">&#62</div>
+			<div class="make_fraction custom_symbol_key pointer nodrag"></div>	
+			
+			<!--row -->
+			<div class="zero number_symbol_key pointer nodrag">0</div>
+			<div class="period number_symbol_key pointer nodrag">.</div>
+			<div class="comma number_symbol_key pointer nodrag">,</div>
+			
+			<div class="plus number_symbol_key pointer nodrag">&#43</div>
+			<div class="minus number_symbol_key pointer nodrag">&#8722</div>
+			<div class="equal number_symbol_key pointer nodrag">&#61</div>	
+			
+			<!--row -->
+			<div class="enter enter_key pointer nodrag" style="visibility:hidden">enter</div>		
+			<div class="space space_key pointer nodrag">space</div>	
+				
+		</div>	
+	</div>
+	<!-- END Keypad 1 -->
+	
+	<!-- Keypad 2 -->
+	<div id="numeric_keypad_G1to6" style="visibility:hidden;">
+		
+		<div class= "dragbar"></div>
+	
+		<div data-id="0"  class="closebutton pointer" ></div>
+			
+		<div class= "display_and_pad">
+				
+			<div class= "displaywindow" >
+				
+	      	<div class="blinkingcursor"></div>
+			
+			<div data-id="0" class="display" ></div>
+			
+			</div>
+			<!--keypad numbers-->
+			<!--top row -->
+			<div class="seven number_symbol_key pointer">7</div>
+			<div class="eight number_symbol_key pointer">8</div>
+			<div class="nine number_symbol_key pointer">9</div>
+			<div class="backspace custom_symbol_key pointer"></div>
+				
+			<!--row -->
+			<div class="four number_symbol_key pointer">4</div>
+			<div class="five number_symbol_key pointer">5</div>
+			<div class="six number_symbol_key pointer">6</div>
+
+			<!--row -->
+			<div class="one number_symbol_key pointer">1</div>
+			<div class="two number_symbol_key pointer">2</div>
+			<div class="three number_symbol_key pointer">3</div>
+
+			<!--row -->
+			<div class="zero number_symbol_key pointer">0</div>
+			<div class="period number_symbol_key pointer">.</div>
+			<div class="comma number_symbol_key pointer">,</div>
+			<div class="clear custom_symbol_key pointer">
+				
+		</div>	
+	</div>
+	<!-- END Keypad 2 -->
+
+	<!-- Keypad 3 -->
+	<div id="full_keypad_g1to2" style="visibility:hidden;">
+	  
+		<div class= "dragbar"></div>
+	
+		<div data-id="0"  class="closebutton pointer" ></div>
+
+		<div class= "display_and_pad">
+	
+			<div class= "displaywindow" >
+		
+				<div data-id="0" class="display" ></div>
+		
+				<div class="fractionholder">	
+		
+					<div data-id="0" class="topfraction"   data-htmlarray= "" ></div>
+					<!-- faked line -->	
+					<div style="left:0px;top:22px;height:1px;width:146px;position:absolute;background-color: #000000"></div>
+					<div data-id="0" class="botfraction"   data-htmlarray= "" ></div>
+				</div>
+		
+				<div class="blinkingcursor"></div>
+		
+			</div>
+		
+			<div class="one number_symbol_key pointer group123">1</div>
+			<div class="two number_symbol_key pointer group123">2</div>
+			<div class="three number_symbol_key pointer group123">3</div>
+		    <div class="four number_symbol_key pointer group123">4</div>
+			<div class="five number_symbol_key pointer group123">5</div>
+			<div class="six number_symbol_key pointer group123">6</div>
+		    <div class="seven number_symbol_key pointer group123">7</div>
+			<div class="eight number_symbol_key pointer group123">8</div>
+			<div class="nine number_symbol_key pointer group123">9</div>
+		    <div class="zero number_symbol_key pointer group123">0</div>
+		    <div class="clear custom_symbol_key pointer"></div>
+		    <div class="backspace custom_symbol_key pointer"></div>
+
+		    <div class="plus number_symbol_key pointer group123">&#43</div>
+		    <div class="minus number_symbol_key pointer group123">&#8722</div>
+		    <div class="equal number_symbol_key pointer group123">&#61</div>	
+			<div class="less_than number_symbol_key pointer group123">&#60</div>
+			<div class="greater_than number_symbol_key pointer group123">&#62</div>
+			<div class="dollar number_symbol_key pointer group123 disableforfractions">$</div>
+			<div class="cent number_symbol_key pointer group123 disableforfractions">&#162</div>
+			<div class="fahrenheit number_symbol_key pointer group123  disableforfractions">&#8457</div>
+			<div class="celsius number_symbol_key pointer group123  disableforfractions">&#8451</div>
+			<div class="enter enter_key pointer nodrag" style="visibility:hidden" ></div>	
+			<div class="shift_key left_shift_key pointer nodrag" style="opacity:0.3" ></div>	
+			<div class="shift_key right_shift_key pointer nodrag" style="opacity:0.3" ></div>	
+	
+			<div class="colon number_symbol_key pointer group123" >&#58</div>	
+			<div class="apostrophe number_symbol_key pointer group123" >&#39</div>	
+			<div class="comma number_symbol_key pointer group123" >,</div>	
+			<div class="period number_symbol_key pointer group123" >.</div>
+			<div class="hyphen number_symbol_key pointer group123" >&#45</div>	
+			<div class="question_mark number_symbol_key pointer group123" >&#63</div>	
+			<div class="make_fraction custom_symbol_key pointer group123" ></div>
+	
+			<div class="keys_to_show abc123_button_right pointer" ></div>	
+			<div class="keys_to_show abc123_button_left pointer" ></div>	
+			<div class="space space_key pointer nodrag" >space</div>
+	
+			<!--  ***************************************************************************************************************-->
+			<div class="letter_q alphabet_key pointer groupABC" >q</div>
+			<div class="letter_w alphabet_key pointer groupABC" >w</div>
+			<div class="letter_e alphabet_key pointer groupABC" >e</div>
+			<div class="letter_r alphabet_key pointer groupABC" >r</div>
+			<div class="letter_t alphabet_key pointer groupABC" >t</div>
+			<div class="letter_y alphabet_key pointer groupABC" >y</div>
+			<div class="letter_u alphabet_key pointer groupABC" >u</div>
+			<div class="letter_i alphabet_key pointer groupABC" >i</div>
+			<div class="letter_o alphabet_key pointer groupABC" >o</div>
+			<div class="letter_p alphabet_key pointer groupABC" >p</div>
+
+			<!--  ***************************************************************************************************************-->
+			<div class="letter_a alphabet_key pointer groupABC" >a</div>
+			<div class="letter_s alphabet_key pointer groupABC" >s</div>
+			<div class="letter_d alphabet_key pointer groupABC" >d</div>
+			<div class="letter_f alphabet_key pointer groupABC" >f</div>
+		    <div class="letter_g alphabet_key pointer groupABC" >g</div>
+			<div class="letter_h alphabet_key pointer groupABC" >h</div>
+			<div class="letter_j alphabet_key pointer groupABC" >j</div>
+			<div class="letter_k alphabet_key pointer groupABC" >k</div>
+			<div class="letter_l alphabet_key pointer groupABC" >l</div>
+
+			<!--  ***************************************************************************************************************-->
+			<div class="letter_z alphabet_key pointer groupABC" >z</div>
+			<div class="letter_x alphabet_key pointer groupABC" >x</div>
+			<div class="letter_c alphabet_key pointer groupABC" >c</div>
+			<div class="letter_v alphabet_key pointer groupABC" >v</div>
+			<div class="letter_b alphabet_key pointer groupABC" >b</div>
+			<div class="letter_n alphabet_key pointer groupABC" >n</div>
+			<div class="letter_m alphabet_key pointer groupABC" >m</div>
+			
+		</div>
+	</div>
+	<!-- END Keypad 2 -->
+	
+<!-- END Keypads -->
+
+<script type="text/javascript" charset="utf-8">	
+	
+	// YOU
+	window.onload=function(){
+		page_builder_app.runAjax();
+	};
+	
+	var getProtocal = document.location.protocol;
+	
+	if ( getProtocal == 'https:' ) {
+		var protocalURL = 'https://c328740.ssl.cf1.rackcdn.com/mathjax/2.1-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+	} else {
+		var protocalURL = 'http://cdn.mathjax.org/mathjax/2.1-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+	}
+	
+	document.write('<script type="text/javascript" src="'+protocalURL+'"><\/script>');
+		
+</script>
+
+<script type="text/x-mathjax-config">
+//This turns most math to sans-serif
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var TEX = MathJax.InputJax.TeX;
+  var PREFILTER = TEX.prefilterMath;
+  TEX.Augment({
+    prefilterMath: function (math,displaymode,script) {
+      return PREFILTER.call(TEX,"\\sf{"+math+"}",displaymode,script);
+    }
+  });
+});
+</script>
+
+<!-- Must be at bottom to work -->
+<script src="js/keypad_controller.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>

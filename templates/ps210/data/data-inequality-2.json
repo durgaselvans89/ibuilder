@@ -1,0 +1,58 @@
+ {
+    "auto_check": "true",
+    "title": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "Inequality Example 2 - No Solution 1",
+            "top": 166,
+            "left": 50,
+            "width": "default"
+        }
+    ],
+    "content_box": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "Solve the system of inequalities by graphing.<br><br>y ≥ x + 5<br>y < x - 4",
+            "top": 286,
+            "left": 49,
+            "width": "default"
+        }
+    ],
+    "coordinate_object": [
+        {
+            "coordinate_object_answer": ">=,1,5|<,1,-4",
+            "coordinate_object_data": "",
+            "coordinate_object_type": "Line",
+            "object_data_open": "",
+            "connect": "true",
+            "colorMode": "false",
+            "lineOption": "true",
+            "shadeOption": "true",
+            "arrowOption": "true",
+            "label_x": "x",
+            "label_y": "y",
+            "quadrants": "4",
+            "scale_x": "11",
+            "scale_y": "11",
+            "show_scale": "true",
+            "show_origin": "true",
+            "slope": "",
+            "inequalities": "true",
+            "no_solution": "true",
+
+            "top": "default",
+            "left": "default",
+            "type": "txt",
+            "width": "default"
+        }
+    ],
+    "font_size": 1,
+    "grades": "mid",
+    "iteration": {},
+    "layout": "A",
+    "template": "ps09"
+}

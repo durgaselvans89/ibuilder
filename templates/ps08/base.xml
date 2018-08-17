@@ -1,0 +1,26 @@
+<RIAManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="v1_0" xsi:noNamespaceSchemaLocation="http://www.cognero.com/Schemas/CogneroRIAManifest.xsd">
+	<Options>
+		<Width>633</Width>
+		<WidthUnits>Pixels</WidthUnits>
+		<Height>460</Height>
+		<HeightUnits>Pixels</HeightUnits>
+	</Options>
+	<XHTMLBody>
+		<ResourceFile>
+			<PackagePath>index.html</PackagePath>
+		</ResourceFile>
+	</XHTMLBody>
+	<SampleImage>
+		<ResourceFile>
+			<PackagePath>Sample.png</PackagePath>
+		</ResourceFile>
+		<MimeType>image/png</MimeType>
+	</SampleImage>
+	<GradingJavascript>
+		<ResourceFile>
+			<PackagePath>Grading/grading.js</PackagePath>
+		</ResourceFile>
+	</GradingJavascript>
+	<Resources>
+    </Resources>
+</RIAManifest>

@@ -1,0 +1,680 @@
+
+/*@font-face { font-family: 'reportschool'; src: url('fonts/reportrg-regular-webfont.woff'); }*/
+@font-face { font-family: 'reportschool'; src: url('fonts/reportschoolrg-regular-webfont.woff'); }
+
+
+/********* math_keypad_G1to2 ******************************************************************/
+
+/* entire div */	
+#full_keypad_g1to2 {
+	position:absolute;
+	top:260px;
+	left:280px;
+	width:640px;
+	height:298px;
+	background-color:#B2F0FF;
+	background-image: url(../images/full_keypad_g1to2/full_keyboard.png);
+}
+
+#full_keypad_g1to2 .closebutton {
+    left:610px;
+	top:0px;
+	height:30px;
+	width:20px;
+	position:absolute;
+	opacity:.2;
+	/*background-color:#B2F0FF;*/
+	
+}
+
+
+#full_keypad_g1to2 .keys_to_show{
+	
+}
+
+
+/* dragbar at top */
+#full_keypad_g1to2 .dragbar {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:640px;
+	height:26px;
+	background-image: url(../images/full_keypad_g1to2/full_topbar.png);
+}
+
+/* keypad */
+#full_keypad_g1to2 .display_and_pad {
+	position:absolute;
+	top:25px;
+	left:0px;
+	width:640px;
+	height:272px;
+	background-image: url(../images/full_keypad_g1to2/full_base.png);	
+}
+
+
+#full_keypad_g1to2 .fractionholder{
+	left:200px;
+	top:1px;
+	height:49px;
+	width:146px;
+	position:absolute;
+	visibility:hidden;
+	background-color:#ffffff;
+}
+
+
+#full_keypad_g1to2 .topfraction{
+	left:5px;
+	top:3px;
+	height:14px;
+	width:135px;
+	position:absolute;
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif !important;
+	/*font-family:Arial, 'MS Trebuchet', sans-serif;*/
+	font-size:14px;
+	border:1px solid blue;
+	line-height: 14px;
+	text-align:center;
+	overflow:hidden;
+}
+
+#full_keypad_g1to2  .showbuttondisabled {
+	opacity:0.6 !important;
+	cursor:default !important;
+	
+}
+
+
+#full_keypad_g1to2 .disableforfractions{
+	
+}
+
+
+
+#full_keypad_g1to2 .botfraction {
+	left:5px;
+	top:26px;
+	height:14px;
+	width:135px;
+	position:absolute;
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif !important;
+	/*font-family:Arial, 'MS Trebuchet', sans-serif;*/
+	font-size:14px;
+	border:1px solid blue;
+	line-height: 14px;
+	text-align:center;
+	overflow:hidden;
+}
+
+#full_keypad_g1to2 .displaywindow { 
+	left:10px;
+	top:3px;
+	height:45px;
+	width:610px;
+	position:absolute;
+	overflow:hidden;
+}
+
+#full_keypad_g1to2 .countwindow {
+	left:298px;
+	top:0px;
+	height:26px;
+	width:30px;
+	position:absolute;
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif !important;
+	/*font-family:Arial, 'MS Trebuchet', sans-serif;*/
+	font-size:14px;
+	/*border:2px solid gray;*/
+	color:light gray;
+	text-align:center;
+	overflow:hidden;
+	line-height:26px;
+}
+
+
+#full_keypad_g1to2 .display {
+	left:5px;
+	top:0px;
+	height:45px;
+	width:auto;
+	position:absolute;
+	opacity:1;
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif !important;
+	/*font-family:Arial, 'MS Trebuchet', sans-serif;*/
+	font-size:19px;
+	line-height:45px;
+	/*background-color:#E8E7E3;*/
+	 letter-spacing: 0.1em;
+	
+}
+
+#full_keypad_g1to2 .remainingamounttext{
+	left:200px;
+	top:0px;
+	position:absolute;
+	width:125px;
+	height:23px;
+	background-image:url(../images/full_keypad_g1to2/char_remain.png);
+}
+
+
+/*************************************/
+
+#full_keypad_g1to2 .one {top:62px;left:10px;}
+	
+#full_keypad_g1to2 .two {top:62px;left:62px;}
+
+#full_keypad_g1to2 .three {top:62px;left:114px;}
+
+#full_keypad_g1to2 .four {top:62px;left:166px;}
+
+#full_keypad_g1to2 .five {top:62px;left:218px;}
+
+#full_keypad_g1to2 .six {top:62px;left:270px;}
+
+#full_keypad_g1to2  .seven {top:62px;left:322px;}
+
+#full_keypad_g1to2 .eight {top:62px;left:374px;}
+
+#full_keypad_g1to2 .nine {top:62px;left:426px;}
+
+#full_keypad_g1to2 .zero{top:62px;left:478px;}
+
+#full_keypad_g1to2 .clear{top:62px;left:530px;}
+
+#full_keypad_g1to2 .backspace{top:62px;left:582px;}
+
+
+
+
+
+/*************************************/
+
+
+/*#full_keypad_g1to2 .one {top:64px;left:10px;}*/
+#full_keypad_g1to2 .plus{top:114px;left:10px;}
+
+#full_keypad_g1to2 .minus{top:114px;left:62px;}
+
+#full_keypad_g1to2 .equal{top:114px;left:114px;}
+
+#full_keypad_g1to2 .less_than{top:114px;left:166px;}
+
+#full_keypad_g1to2 .greater_than{top:114px;left:218px;}
+
+#full_keypad_g1to2 .dollar {top:114px;left:270px;}
+
+#full_keypad_g1to2 .cent {top:114px;left:322px;}
+
+#full_keypad_g1to2 .fahrenheit {top:114px;left:374px;}
+
+#full_keypad_g1to2 .celsius {top:114px;left:426px;}
+
+#full_keypad_g1to2 .enter_key{top:114px;left:478px;}
+
+
+
+/*************************************/
+#full_keypad_g1to2  .left_shift_key{top:166px;left:10px;  }
+
+#full_keypad_g1to2  .right_shift_key{top:166px;left:506px;  }
+
+
+#full_keypad_g1to2 .colon {left:140px;top:166px;}
+
+#full_keypad_g1to2 .apostrophe {left:192px;top:166px;	}
+
+#full_keypad_g1to2 .comma{left:244px;top:166px;
+	font-size:34px !important;		}
+
+#full_keypad_g1to2 .period{left:296px;top:166px;font-size:28px !important;	}
+
+#full_keypad_g1to2 .hyphen{left:348px;top:166px;	}
+
+#full_keypad_g1to2 .question_mark{left:400px;top:166px;	}
+
+#full_keypad_g1to2 .make_fraction{left:452px;top:166px;	}
+
+/*#full_keypad_g1to2 .123button_left{left:10px;top:100px }
+#full_keypad_g1to2 .123button_right{left:10px;top:100px }*/
+
+
+#full_keypad_g1to2 .abc123_button_left{left:10px;top:218px }
+#full_keypad_g1to2 .abc123_button_right{left:530px;top:218px }
+
+#full_keypad_g1to2 .space_key{left:113px;top:218px    }
+
+/*#full_keypad_g1to2 .apostrophe {left:167px;top:155px;	}
+
+#full_keypad_g1to2 .period{left:212px;top:155px;	}
+
+#full_keypad_g1to2 .hyphen{left:257px;top:155px;	}
+
+#full_keypad_g1to2 .period4{left:302px;top:155px;	}
+
+#full_keypad_g1to2 .period5{left:347px;top:155px;	}
+
+#full_keypad_g1to2 .period6{left:392px;top:155px;	}
+
+#full_keypad_g1to2 .period7{left:437px;top:155px;	}*/
+
+/********************************************************************/
+#full_keypad_g1to2  .letter_q {top:62px;left:10px;}
+	
+#full_keypad_g1to2 .letter_w {top:62px;left:62px;}
+
+#full_keypad_g1to2 .letter_e {top:62px;left:114px;}
+
+#full_keypad_g1to2 .letter_r {top:62px;left:166px;}
+
+#full_keypad_g1to2 .letter_t {top:62px;left:218px;}
+
+#full_keypad_g1to2 .letter_y {top:62px;left:270px;}
+
+#full_keypad_g1to2  .letter_u {top:62px;left:322px;}
+
+#full_keypad_g1to2 .letter_i {top:62px;left:374px;}
+
+#full_keypad_g1to2 .letter_o {top:62px;left:426px;}
+
+#full_keypad_g1to2 .letter_p {top:62px;left:478px;}
+
+/**********************/
+#full_keypad_g1to2 .letter_a {top:114px;left:10px;}
+
+#full_keypad_g1to2 .letter_s {top:114px;left:62px;}
+
+#full_keypad_g1to2 .letter_d {top:114px;left:114px;}
+
+#full_keypad_g1to2 .letter_f {top:114px;left:166px;}
+
+#full_keypad_g1to2 .letter_g {top:114px;left:218px;}
+
+#full_keypad_g1to2 .letter_h {top:114px;left:270px;}
+
+#full_keypad_g1to2 .letter_j {top:114px;left:322px;}
+
+#full_keypad_g1to2 .letter_k {top:114px;left:374px;}
+
+#full_keypad_g1to2 .letter_l {top:114px;left:426px;}
+
+
+/*************************/
+
+#full_keypad_g1to2 .letter_z {left:140px;top:166px;}
+
+#full_keypad_g1to2 .letter_x {left:192px;top:166px;	}
+
+#full_keypad_g1to2 .letter_c {left:244px;top:166px;	}
+
+#full_keypad_g1to2 .letter_v {left:296px;top:166px;	}
+
+#full_keypad_g1to2 .letter_b {left:348px;top:166px;	}
+
+#full_keypad_g1to2 .letter_n {left:400px;top:166px;	}
+
+#full_keypad_g1to2 .letter_m {left:452px;top:166px;	}
+
+
+
+
+/**********************************************************************/
+
+
+
+
+
+#full_keypad_g1to2 .space_key{
+	position:absolute;
+	width:414px;
+	height:48px;
+	background-image:url(../images/full_keypad_g1to2/sprite_space.png);
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif !important;
+	/*font-family: Arial, "MS Trebuchet", sans-serif;*/
+	font-size:20px;
+	background-position:0px 0px ;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 48px;
+	font-color:black;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	 user-select: none;
+	
+}
+
+#full_keypad_g1to2 .abc123_button_left{
+	position:absolute;
+	width:100px;
+	height:48px;
+	background-image:url(../images/full_keypad_g1to2/sprite_123.png);
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif !important;
+	/*font-family: Arial, "MS Trebuchet", sans-serif;*/
+	font-size:20px;
+	background-position:0px -49px;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 48px;
+	font-color:black;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	 user-select: none;
+	
+}
+
+
+#full_keypad_g1to2 .abc123_button_right{
+	position:absolute;
+	width:100px;
+	height:48px;
+	background-image:url(../images/full_keypad_g1to2/sprite_123.png);
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif !important;
+	/*font-family: Arial, "MS Trebuchet", sans-serif;*/
+	font-size:20px;
+	background-position:0px -49px ;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 48px;
+	font-color:black;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	 user-select: none;
+	
+}
+
+
+
+#full_keypad_g1to2 .123button_leftxxxxxx{
+	position:absolute;
+	width:80px;
+	height:40px;
+	background-image:url(../images/full_keypad_g1to2/sprite_123.png);
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif !important;
+	/*font-family: Arial, "MS Trebuchet", sans-serif;*/
+	font-size:20px;
+	background-position:0px 0px ;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 42px;
+	font-color:black;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	 user-select: none;
+	
+}
+
+#full_keypad_g1to2 .123button_rightxxxxxx{
+	position:absolute;
+	width:80px;
+	height:40px;
+	background-image:url(../images/full_keypad_g1to2/sprite_123.png);
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif !important;
+	/*font-family: Arial, "MS Trebuchet", sans-serif;*/
+	font-size:20px;
+	background-position:0px 0px ;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 42px;
+	font-color:black;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	 user-select: none;
+	
+}
+
+
+
+
+
+
+#full_keypad_g1to2   .right_shift_key{
+	position:absolute;
+	width:124px;
+	height:48px;
+	background-image:url(../images/full_keypad_g1to2/newarrow.png);
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif !important;
+	/*font-family: Arial, "MS Trebuchet", sans-serif;*/
+	font-size:20px;
+	background-position:0px 0px ;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 48px;
+	font-color:black;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	 user-select: none;
+	
+	
+	
+	
+}
+
+#full_keypad_g1to2  .left_shift_key{
+	position:absolute;
+	width:124px;
+	height:48px;
+	background-image:url(../images/full_keypad_g1to2/newarrow.png);
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif !important;
+	/*font-family: Arial, "MS Trebuchet", sans-serif;*/
+	font-size:20px;
+	background-position:0px 0px ;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 48px;
+	font-color:black;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	 user-select: none;
+	
+	
+	
+	
+}
+
+
+
+
+
+/*#full_keypad_g1to2 .less_than{top:154px;left:155px;}*/
+
+#full_keypad_g1to2  .alphabet_key{
+	position:absolute;
+	width:48px;
+	height:48px;
+	background-image:url(../images/full_keypad_g1to2/keysprite.png);
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif !important;
+	/*font-family: Arial, "MS Trebuchet", sans-serif;*/
+	font-size:20px;
+	background-position:0px 0px ;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 48px;
+	font-color:black;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	 user-select: none;
+	 /*visibility:hidden;*/
+	
+}
+
+#full_keypad_g1to2 .group123{
+	/*visibility:visible;	*/
+	z-index:1;
+}
+
+#full_keypad_g1to2 .groupABC{
+  /*visibility:hidden;	*/
+   z-index:-1;
+}
+
+#full_keypad_g1to2 .abc123_button_right.downstate{
+	background-position: 0px 0px;
+}
+
+#full_keypad_g1to2 .abc123_button_left.downstate{
+	background-position: 0px 0px;
+}
+	
+#full_keypad_g1to2 .shift_key{
+		
+}
+
+#full_keypad_g1to2 .shift_key.downstate{
+	/*background-position: 0px 0px !important;	*/
+}
+
+
+#full_keypad_g1to2 .space_key.downstate{
+	background-position: 0px -48px !important;
+}
+	
+	
+#full_keypad_g1to2 .space{
+		
+}
+
+
+
+
+#full_keypad_g1to2 .downstate {
+   background-position: -48px 0px !important;
+   color:white;
+}
+
+ #full_keypad_g1to2 .enter_key.downstate {
+  /* background-position: -0px -40px !important;*/
+}
+
+/*#full_keypad_g1to2 .space_key.downstate {
+   background-position: 0px -40px !important;
+}*/
+
+
+#full_keypad_g1to2 .blinkingcursor{
+	position:absolute;
+	width:1px;
+	height:28px;
+	left:3px;
+	top:8px;
+	background-image:url(../images/full_keypad_g1to2/cursor.gif);
+}
+
+
+.pointer { 
+	cursor: pointer; 
+}
+
+
+/* special symbol key */
+
+
+
+#full_keypad_g1to2 .number_symbol_key {
+	position:absolute;
+	width:48px;
+	height:48px;
+	background-image:url(../images/full_keypad_g1to2/keysprite.png);
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif !important;
+	/*font-family: Arial, "MS Trebuchet", sans-serif;*/
+	font-size:20px;
+	background-position:0px 0px ;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 48px;
+	font-color:black;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	 user-select: none;
+	 
+}
+
+
+#full_keypad_g1to2 .custom_symbol_key {
+	position:absolute;
+	width:48px;
+	height:48px;
+	background-position:0px 0px ;	
+}
+
+/* enter_key */
+#full_keypad_g1to2 .enter_key {
+	position:absolute;
+	background-image:url(../images/full_keypad_g1to2/sprite_enter.png);
+	width:154px;
+	height:48px;
+	/*background-position:-1px -1px ;	*/
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif !important;
+	/*font-family: Arial, "MS Trebuchet", sans-serif;*/
+	font-size:20px;
+	background-position:0px 0px ;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 48px;
+	font-color:black;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	 user-select: none;
+}
+
+#full_keypad_g1to2 .space_keyxxxxxxx {
+	position:absolute;
+	width:187px;
+	height:42px;
+	background-position:-1px -1px ;	
+	background-position:-1px -1px ;	
+	font-family: Arial, "MS Trebuchet", sans-serif !important;
+	font-size:20px;
+	background-position:-1px -1px ;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 42px;
+	font-color:black;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	 user-select: none;
+}
+
+			
+#full_keypad_g1to2  .backspace {
+	background-image:url(../images/full_keypad_g1to2/backspace.png);
+}
+
+#full_keypad_g1to2  .clear {
+	background-image:url(../images/full_keypad_g1to2/clear.png);
+}
+
+#full_keypad_g1to2  .make_fraction {
+	background-image:url(../images/full_keypad_g1to2/fraction.png);
+}
+
+/*#full_keypad_g1to2  .enter {
+	background-image:url(../images/full_keypad_g1to2/enter.png);
+}*/
+
+#full_keypad_g1to2  .spacexxxx {
+	background-image:url(../images/full_keypad_g1to2/space.png);
+}

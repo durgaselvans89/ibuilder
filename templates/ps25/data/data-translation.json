@@ -1,0 +1,52 @@
+ {
+    "auto_check": "true",
+    "title": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "Translation Example",
+            "top": 166,
+            "left": 50,
+            "width": "default"
+        }
+    ],
+    "content_box": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "Use the Connect Line tol to<br>draw the image of the figure<br>after the following<br>transformations.<br><br> - a reflection over the x-axis<br> - a horizontal translation 7<br> units to the left",
+            "top": 286,
+            "left": 49,
+            "width": "default"
+        }
+    ],
+    "coordinate_object": [
+        {
+            "coordinate_object_answer": "3,0:4,1:5,0:6,-1:5,-2:4,-3:5,-4:4,-5:3,-4:2,-3:3,-2:4,-1:3,0|-4,0:-3,1:-2,0:-1,-1:-2,-2:-3,-3:-2,-4:-3,-5:-4,-4:-5,-3:-4,-2:-3,-1:-4,0",
+            "coordinate_object_data": "2,3:3,4:4,5:5,4:4,3:5,2:6,1:5,0:4,-1:3,0:4,1:3,2:2,3",
+            "coordinate_object_type": "Point",
+            "object_data_open": "",
+            "connect": "true",
+            "label_x": "x",
+            "label_y": "y",
+            "quadrants": "4",
+            "scale_x": "9",
+            "scale_y": "9",
+            "show_scale": "true",
+            "slope": "",
+
+            "name": "",
+            "top": "default",
+            "left": "default",
+            "type": "txt",
+            "width": "default"
+        }
+    ],
+    "font_size": 1,
+    "grades": "mid",
+    "iteration": {},
+    "layout": "A",
+    "template": "ps08"
+}

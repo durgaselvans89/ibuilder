@@ -1,0 +1,59 @@
+ {
+    "auto_check": "true",
+    "title": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "",
+            "top": "default",
+            "left": "default",
+            "width": "default"
+        }
+    ],
+    "content_box": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "",
+            "top": "default",
+            "left": "default",
+            "width": "default"
+        }
+    ],
+    "coordinate_object": [
+        {
+            "show_flip_horz_btn": "true",
+            "show_flip_vert_btn": "true",
+            "show_rotate_btn": "true",
+            "a": "2",
+            "b": "5",
+            "c": "3",
+            "connect": "false",
+            "coordinate_object_answer": "-3,3:0,0:0,3:-3,3",
+            "coordinate_object_data": "3,3:0,0:0,3:3,3",
+            "coordinate_object_type": "Equation",
+            "equation_type": "Quadratic",
+            "ghosted": "false",
+            "id": 0,
+            "label_x": "",
+            "label_y": "",
+            "left": 503,
+            "name": "",
+            "reference_labels": "A,B,C",
+            "rotation_point": "default",
+            "scale_x": "8",
+            "scale_y": "8",
+            "text": "",
+            "top": 101,
+            "type": "txt",
+            "width": "default"
+        }
+    ],
+    "font_size": 1,
+    "grades": "mid",
+    "iteration": {},
+    "layout": "A",
+    "template": "ps11"
+}

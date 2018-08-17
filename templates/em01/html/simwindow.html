@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+        <meta charset="utf-8" />
+        <title>checkanswer buttons palette</title>
+
+        <!--<script src="jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/libs/jquery-migrate-1.2.1.min.js" type="text/javascript" charset="utf-8"></script>-->
+
+		<style type="text/css" media="screen">
+
+		#checkanswer_button {
+			position: absolute;
+			width: 115px;
+			height: 38px;
+			left: 20px;
+			top: 33px;
+			background-image: url("../images/btn_checknew.png");
+			/*background-position:-115px 0px;*/
+		}
+		
+		#save_state_button {
+			position: absolute;
+			left: 150px;
+			top: 10px;
+		}
+		
+		.hidden {
+			visibility:hidden;
+		}
+		
+		.makeVisible {
+			visibility:visible;
+		}
+		
+		
+		#restore_state_button {
+			position: absolute;
+			left: 230px;
+			top: 10px;
+		}
+		
+		#new_game_button {
+			position: absolute;
+			left: 150px;
+			top: 40px;
+		}
+		
+		#getstate_game_button{
+			position: absolute;
+			left: 150px;
+			top: 5px;
+			
+		}
+		
+		#destroystate_game_button{
+			position: absolute;
+			left: 220px;
+			top: 5px;
+			
+		}
+		
+		#teacherview_game_button{
+			position: absolute;
+			left: 280px;
+			top: 5px;	
+		}
+		
+		
+		#hints{
+			position: absolute;
+			left: 2px;
+			top: 5px;	
+		}
+		
+		#instructions{
+			position: absolute;
+			left: 60px;
+			top: 5px;	
+		}
+		
+		
+		#restore_game_button {
+			position: absolute;
+			left: 230px;
+			top: 40px;
+		}
+		
+		#text_output_game_status{
+			position: absolute;
+			left: 180px;
+			top: 75px;	
+		}
+		
+		#hints_status{
+			position: absolute;
+			left: 10px;
+			top: 100px;
+			
+		}
+		
+		#directions_status{
+			position: absolute;
+			left: 180px;
+			top: 100px;
+			
+		}
+		
+		#text_output_button_status{
+			position: absolute;
+			left: 10px;
+			top: 75px;	
+		}
+		
+		#load_as_assessment_button{
+			position: absolute;
+			left: 10px;
+			top: 125px;
+		}
+		
+		#load_as_return_assessment_button{
+			position: absolute;
+			left: 130px;
+			top: 125px;
+		}
+		
+		
+		
+		.checkbutton_inactive{
+			visibility:visible;
+			background-position:-115px 0px;
+		}
+		
+		.checkbutton_active{
+			visibility:visible;
+			background-position:0px 0px;
+		}
+		
+		.checkbutton_incorrect{
+			visibility:visible;
+			background-position:-345px 0px;
+		}
+		
+		.checkbutton_correct{
+			visibility:visible;
+			background-position:-230px 0px;
+		}
+		
+		.checkbutton_hidden{
+		   	visibility:hidden;	
+		    background-position:0px 0px;
+		}
+		
+		
+		
+		
+		</style>
+		
+
+        <script type="text/javascript">
+
+		// DEBUGGING TOOL - 
+		// SIMULATES MESSAGE THE FRAMEWORK WOULD SEND
+
+		var _mainWindow = window.opener;
+		var _dispatcher;
+		var _currCheckbuttonStatus;
+		var _tempObjHolder;
+		
+		var _numHints = 0;
+		var _numDirections = 0;
+		
+		window.onload = doAfterWindowHasLoaded;
+		
+		function doAfterWindowHasLoaded(){
+			
+			//console.log("my name is " + window.name);
+
+			// after main window gets callback that this is loaded
+			// it sets the dispatcher and listeners for stuff
+			window.setDispatcher = function( p_Dispatcher){
+			
+				
+				_dispatcher = p_Dispatcher;
+				
+				// bind to the page loaded message
+				_dispatcher.bind("iteration.loaded", function(p_state){
+					document.getElementById('text_output_game_status').value = 'page loaded';
+					//console.log(p_state);
+					if(p_state.showdirections === "true"){
+						document.getElementById('directions_status').value = "show directions";
+					}
+					
+					if(p_state.showhints === "true"){
+						document.getElementById('hints_status').value = "show hints";
+					}
+					
+					makePlayButtonsVisible();
+		        })
+		
+		        
+				_dispatcher.bind("iteration.currentstate", function(p_state){		
+				    //console.log(p_state);
+				    //_tempObjHolder = p_state.currentstate;
+				    //alert("current state");
+				    //console.log("got this state " + p_state);
+				    //store in local storage
+				    localStorage.setItem("gamestate",p_state.currentstate);
+			    })
+			
+			    _dispatcher.bind("iteration.hints.clicked", function(p_state){ 
+				 //alert("hints clicked");
+				  _numHints++;
+				  document.getElementById('hints_status').value = 'hints = ' + _numHints;
+				})
+				
+				_dispatcher.bind("iteration.directions.clicked", function(p_state){ 
+				 //alert("directions clicked");
+				 _numDirections++;
+				document.getElementById('directions_status').value = 'directions = ' + _numDirections;
+				})
+			
+			
+				
+				// bind all check answer button stuff here...
+				_dispatcher.bind("iteration.checkbutton", function(p_state){
+					//alert("got the call");
+					console.log("got the checkbutton call" + p_state.state);
+					switch(p_state.state)
+					{
+					case "inactive":
+					  	document.getElementById("checkanswer_button").className = "";
+						document.getElementById("checkanswer_button").className = "checkbutton_inactive";
+						document.getElementById('text_output_button_status').value = 'inactive';
+					    _currCheckbuttonStatus = "inactive";
+					  break;
+					case "active":
+					  	document.getElementById("checkanswer_button").className = "";
+						document.getElementById("checkanswer_button").className = "checkbutton_active";
+						document.getElementById('text_output_button_status').value = 'active';
+						_currCheckbuttonStatus = "active";
+					  break;
+					case "correct":
+						document.getElementById("checkanswer_button").className = "";
+						document.getElementById("checkanswer_button").className = "checkbutton_correct";
+						document.getElementById('text_output_button_status').value = 'correct';
+						_currCheckbuttonStatus = "correct";
+					  break;
+					case "incorrect":
+						document.getElementById("checkanswer_button").className = "";
+						document.getElementById("checkanswer_button").className = "checkbutton_incorrect";
+						document.getElementById('text_output_button_status').value = 'incorrect';
+						_currCheckbuttonStatus = "incorrect";
+						break;
+					case "hidden":
+						document.getElementById("checkanswer_button").className = "";
+						document.getElementById("checkanswer_button").className = "checkbutton_hidden";
+						document.getElementById('text_output_button_status').value = 'hidden';
+						_currCheckbuttonStatus = "hidden";
+					  break;
+					
+					default:
+					  
+					}
+					
+					
+				})
+				
+			
+				
+		
+			}
+			
+			//makeCheckAnswerVisible();
+			
+			
+			function makePlayButtonsVisible(){
+				var d = document.getElementById("new_game_button");
+				d.className = d.className + "makevisible";
+				
+				d = document.getElementById("restore_game_button");
+				d.className = d.className + "makevisible";
+				
+				
+				d = document.getElementById("teacherview_game_button");
+				d.className = d.className + "makevisible";
+				
+				d = document.getElementById("load_as_assessment_button");
+				d.className = d.className + "makevisible";
+					
+				d = document.getElementById("load_as_return_assessment_button");
+				d.className = d.className + "makevisible";
+				//load_as_assessment_button
+				//load_as_return_assessment_button		
+			}
+			
+			
+			function makeCheckAnswerVisible(){
+				document.getElementById("checkanswer_button").className = "";
+				document.getElementById("checkanswer_button").className = "checkbutton_correct";
+			}
+			
+			
+			
+			// send main window a message that this is now loaded...
+			_mainWindow.smallWindowHasLoaded();
+		
+		}
+
+		function startNewGame(){
+			//_dispatcher.dispatch("iteration.gamestate", null);
+			_dispatcher.dispatch("iteration.gamestate", {"type":"iteration", "status":"new"});
+			
+			document.getElementById('text_output_game_status').value = 'new game';
+			makePlayButtonsInVisible();
+		}
+
+		
+		function loadOldGame(){
+			var tState = localStorage.getItem("gamestate");
+			//console.log("here is the state " + tState.toString());
+			console.log(tState);
+			//_dispatcher.dispatch("iteration.gamestate", tState );
+			//var tTempString = _tempObjHolder;
+			//_dispatcher.dispatch("iteration.gamestate", {"type":"iteration", "status":"return", "savedstate":"yermom"});
+			_dispatcher.dispatch("iteration.gamestate", {"type":"iteration", "status":"return", "savedstate": tState });
+			//console.log("--------------------");
+			//console.log(tState);
+			document.getElementById('text_output_game_status').value = 'old game';
+			makePlayButtonsInVisible();
+			
+			
+		}
+		
+		function loadAssessment(){
+			//alert("assessment");
+			
+					
+			_dispatcher.dispatch("iteration.gamestate", {"type":"assessment", "status":"new" });
+			
+			document.getElementById('text_output_game_status').value = 'new assess';
+			makePlayButtonsInVisible();
+			
+		}
+		
+		function loadAssessmentAsReturn(){
+			var tState = localStorage.getItem("gamestate");
+			//alert("assessment as return");
+			_dispatcher.dispatch("iteration.gamestate", {"type":"assessment", "status":"return", "savedstate": tState});
+			
+			document.getElementById('text_output_game_status').value = 'return assess';
+			makePlayButtonsInVisible();
+		}
+		
+		function loadTeacherView(){
+			var tState = localStorage.getItem("gamestate");
+			console.log(tState);
+			_dispatcher.dispatch("iteration.gamestate", {"type":"teacherview", "status":"return", "savedstate": tState });
+			//console.log("teacher view");
+			//_dispatcher.dispatch("iteration.gamestate", {"type":"teacherview", "status":"return", "savedstate": tState });
+			document.getElementById('text_output_game_status').value = 'teacherview';
+			//makePlayButtonsInVisible();
+		}
+
+		function makePlayButtonsInVisible(){
+			//document.getElementById("new_game_button").disabled = true;
+			//document.getElementById("restore_game_button").disabled = true;
+
+		}
+		
+		function showHints(){
+			_dispatcher.dispatch("iteration.hints.show");
+		}
+		
+		function showInstructions(){
+			_dispatcher.dispatch("iteration.directions.show");
+		}
+		
+		
+		function getGameState(){
+			//alert("get state");
+			_dispatcher.dispatch("iteration.requeststate");
+		}
+		
+		function checkAnswer(){
+			//if (_currCheckbuttonStatus !== "active"){ return;}
+		    //send message to stage here....
+		     
+		    _dispatcher.dispatch("iteration.checkanswer");
+		}
+		
+		function destroyGameState(){
+			//_dispatcher.dispatch("iteration.gamestate.destroystate");
+			_dispatcher.dispatch("iteration.destroystate");
+		}
+           
+        </script>
+
+</head>
+<body>
+   	<!--<div id="checkanswer_button" class= "hidden" onclick="checkAnswer();"></div>-->
+   <div id="checkanswer_button" class= "hidden" onclick="checkAnswer();"></div>
+   <!-- <button id="save_state_button" type="button">Save State</button>
+    <button id="restore_state_button" type="button">Restore State</button>-->
+    <button id="getstate_game_button"  type="button" onclick="getGameState();">Get State</button>
+
+    <button id="destroystate_game_button"  type="button" onclick="destroyGameState();">Destroy</button>
+    <button id="new_game_button" class= "hidden" type="button" onclick="startNewGame();">New Game</button>
+    <button id="restore_game_button" class= "hidden" type="button" onclick="loadOldGame();">Restore Game</button>
+     
+    <button id="teacherview_game_button" class= "hidden" type="button" onclick="loadTeacherView();">T-View</button>
+    <textarea id="text_output_game_status" rows="1" cols="15" disabled="disabled"  >
+	loadingx... 
+	</textarea>
+	<textarea id="text_output_button_status" rows="1" cols="20" disabled="disabled"   >
+	hidden-inactive 
+	</textarea>
+	
+	<textarea id="hints_status" rows="1" cols="15" disabled="disabled"  >
+	hints... 
+	</textarea>
+	<textarea id="directions_status" rows="1" cols="15" disabled="disabled"  >
+	directions... 
+	</textarea>
+	
+	
+	
+	<button id="hints"  type="button" onclick="showHints();">hints</button>
+	<button id="instructions"  type="button" onclick="showInstructions();">directions</button>
+	 <button id="load_as_assessment_button" class= "hidden" type="button" onclick="loadAssessment();">load assessment</button>
+	<button id="load_as_return_assessment_button"  class= "hidden" type="button" onclick="loadAssessmentAsReturn();">load return assessment</button>
+	
+</body>
+</html>

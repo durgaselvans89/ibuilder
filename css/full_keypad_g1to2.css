@@ -1,0 +1,577 @@
+
+
+@font-face { font-family: 'mheelemsanscondensed'; src: url('fonts/mheelemsanscondensed-regular-webfont.woff'); }
+
+
+/********* math_keypad_G1to2 ******************************************************************/
+
+/* entire div */    
+#full_keypad_g1to2 {
+    position:absolute;
+    top:10px;
+    left:10px;
+    width:610px;
+    height:278px;
+    z-index: 900;
+}
+
+#full_keypad_g1to2 .closebutton {
+    left:580px;
+    top:0px;
+    height:30px;
+    width:20px;
+    position:absolute;
+    opacity:.2;
+}
+
+
+#full_keypad_g1to2 .keys_to_show{
+    
+}
+
+
+/* dragbar at top */
+#full_keypad_g1to2 .dragbar {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:609px;
+    height:26px;
+    background-image: url(../images/full_keypad_g1to2/full_topbar.png);
+}
+
+/* keypad */
+#full_keypad_g1to2 .display_and_pad {
+    position:absolute;
+    top:25px;
+    left:0px;
+    width:609px;
+    height:259px;
+    background-image: url(../images/full_keypad_g1to2/full_base.png);   
+}
+
+
+#full_keypad_g1to2 .fractionholder{
+    left:200px;
+    top:0px;
+    height:43px;
+    width:146px;
+    position:absolute;
+    visibility:hidden;
+    background-color:#ffffff;
+}
+
+
+#full_keypad_g1to2 .topfraction{
+    left:5px;
+    top:3px;
+    height:12px;
+    width:135px;
+    position:absolute;
+    font-family: 'mheelemsanscondensed', Arial, "MS Trebuchet", sans-serif !important;
+    /*font-family:Arial, 'MS Trebuchet', sans-serif;*/
+    font-size:14px;
+    border:1px solid blue;
+    line-height: 14px;
+    text-align:center;
+    overflow:hidden;
+}
+
+#full_keypad_g1to2  .showbuttondisabled {
+    opacity:0.6 !important;
+    cursor:default !important;
+    
+}
+
+
+#full_keypad_g1to2 .disableforfractions{
+    
+}
+
+
+
+#full_keypad_g1to2 .botfraction {
+    left:5px;
+    top:26px;
+    height:12px;
+    width:135px;
+    position:absolute;
+    font-family: 'mheelemsanscondensed', Arial, "MS Trebuchet", sans-serif !important;
+    /*font-family:Arial, 'MS Trebuchet', sans-serif;*/
+    font-size:14px;
+    border:1px solid blue;
+    line-height: 14px;
+    text-align:center;
+    overflow:hidden;
+}
+
+#full_keypad_g1to2 .displaywindow { 
+    left:10px;
+    top:3px;
+    height:45px;
+    width:610px;
+    position:absolute;
+    overflow:hidden;
+}
+
+#full_keypad_g1to2 .countwindow {
+    left:298px;
+    top:0px;
+    height:26px;
+    width:30px;
+    position:absolute;
+    font-family: 'mheelemsanscondensed', Arial, "MS Trebuchet", sans-serif !important;
+    /*font-family:Arial, 'MS Trebuchet', sans-serif;*/
+    font-size:14px;
+    /*border:2px solid gray;*/
+    color:light gray;
+    text-align:center;
+    overflow:hidden;
+    line-height:26px;
+}
+
+
+#full_keypad_g1to2 .display {
+    left:5px;
+    top:0px;
+    height:45px;
+    width:auto;
+    position:absolute;
+    opacity:1;
+    font-family: 'mheelemsanscondensed', Arial, "MS Trebuchet", sans-serif !important;
+    /*font-family:Arial, 'MS Trebuchet', sans-serif;*/
+    font-size:19px;
+    line-height:45px;
+    /*background-color:#E8E7E3;*/
+     letter-spacing: 0.1em;
+    
+}
+
+#full_keypad_g1to2 .remainingamounttext{
+    left:200px;
+    top:0px;
+    position:absolute;
+    width:125px;
+    height:23px;
+    background-image:url(../images/full_keypad_g1to2/char_remain.png);
+}
+
+
+/*************************************/
+#full_keypad_g1to2 .one      {top:58px;left:4px;}
+#full_keypad_g1to2 .two      {top:58px;left:54px;}
+#full_keypad_g1to2 .three    {top:58px;left:104px;}
+#full_keypad_g1to2 .four     {top:58px;left:154px;}
+#full_keypad_g1to2 .five     {top:58px;left:204px;}
+#full_keypad_g1to2 .six      {top:58px;left:254px;}
+#full_keypad_g1to2 .seven    {top:58px;left:304px;}
+#full_keypad_g1to2 .eight    {top:58px;left:354px;}
+#full_keypad_g1to2 .nine     {top:58px;left:404px;}
+#full_keypad_g1to2 .zero     {top:58px;left:454px;}
+#full_keypad_g1to2 .clear    {top:58px;left:504px;}
+#full_keypad_g1to2 .backspace{top:58px;left:554px;}
+/*************************************/
+#full_keypad_g1to2 .plus                 {top:108px;left:4px;}
+#full_keypad_g1to2 .minus                {top:108px;left:54px;}
+#full_keypad_g1to2 .multiply             {top:108px;left:104px;}
+#full_keypad_g1to2 .divide               {top:108px;left:154px;}
+#full_keypad_g1to2 .less_than_equal_to   {top:108px;left:204px;}
+#full_keypad_g1to2 .less_than            {top:108px;left:254px;}
+#full_keypad_g1to2 .equal                {top:108px;left:304px;}
+#full_keypad_g1to2 .greater_than         {top:108px;left:354px;}
+#full_keypad_g1to2 .greater_than_equal_to{top:108px;left:404px;}
+#full_keypad_g1to2 .dollar               {top:108px;left:454px;}
+#full_keypad_g1to2 .cent                 {top:108px;left:504px;}
+#full_keypad_g1to2 .pi                   {top:108px;left:554px;}
+
+/*************************************/
+#full_keypad_g1to2 .left_shift_key      {top:158px;left:4px;}
+#full_keypad_g1to2 .colon               {top:158px;left:130px;}
+#full_keypad_g1to2 .apostrophe          {top:158px;left:180px;}
+#full_keypad_g1to2 .comma               {top:158px;left:230px;font-size:28px !important;}
+#full_keypad_g1to2 .period              {top:158px;left:280px;font-size:28px !important;}
+#full_keypad_g1to2 .question_mark       {top:158px;left:330px;}
+#full_keypad_g1to2 .exclamation_mark    {top:158px;left:380px;}
+#full_keypad_g1to2 .make_fraction       {top:158px;left:430px;}
+#full_keypad_g1to2 .enter_key.group123  {top:158px;left:480px;background-image:url("../images/full_keypad_g1to2/sprite_enter125.png");width:125px;}
+/*#full_keypad_g1to2 .right_shift_key     {top:158px;left:480px;}*/
+/*************************************/
+#full_keypad_g1to2 .abc123_button_left  {top:208px;left:4px;}
+#full_keypad_g1to2 .abc123_button_right {top:208px;left:506px;}
+#full_keypad_g1to2 .space_key           {top:208px;left:105px;}
+/********************************************************************/
+#full_keypad_g1to2 .letter_q {top:58px;left:4px;}  
+#full_keypad_g1to2 .letter_w {top:58px;left:54px;}
+#full_keypad_g1to2 .letter_e {top:58px;left:104px;}
+#full_keypad_g1to2 .letter_r {top:58px;left:154px;}
+#full_keypad_g1to2 .letter_t {top:58px;left:204px;}
+#full_keypad_g1to2 .letter_y {top:58px;left:254px;}
+#full_keypad_g1to2 .letter_u {top:58px;left:304px;}
+#full_keypad_g1to2 .letter_i {top:58px;left:354px;}
+#full_keypad_g1to2 .letter_o {top:58px;left:404px;}
+#full_keypad_g1to2 .letter_p {top:58px;left:454px;}
+/**********************/
+#full_keypad_g1to2 .letter_a {top:108px;left:4px;} 
+#full_keypad_g1to2 .letter_s {top:108px;left:54px;}
+#full_keypad_g1to2 .letter_d {top:108px;left:104px;}
+#full_keypad_g1to2 .letter_f {top:108px;left:154px;}
+#full_keypad_g1to2 .letter_g {top:108px;left:204px;}
+#full_keypad_g1to2 .letter_h {top:108px;left:254px;}
+#full_keypad_g1to2 .letter_j {top:108px;left:304px;}
+#full_keypad_g1to2 .letter_k {top:108px;left:354px;}
+#full_keypad_g1to2 .letter_l {top:108px;left:404px;}
+#full_keypad_g1to2 .enter_key.groupABC{top:108px;left:454px;width:150px;}
+/*************************/
+#full_keypad_g1to2 .letter_z {top:158px;left:130px;}
+#full_keypad_g1to2 .letter_x {top:158px;left:180px;}
+#full_keypad_g1to2 .letter_c {top:158px;left:230px;}
+#full_keypad_g1to2 .letter_v {top:158px;left:280px;}
+#full_keypad_g1to2 .letter_b {top:158px;left:330px;}
+#full_keypad_g1to2 .letter_n {top:158px;left:380px;}
+#full_keypad_g1to2 .letter_m {top:158px;left:430px;}
+#full_keypad_g1to2 .right_shift_key.groupABC {top:158px;left:480px;}
+/**********************************************************************/
+
+#full_keypad_g1to2 .space_key{
+    position:absolute;
+    width:400px;
+    height:48px;
+    background-image:url(../images/full_keypad_g1to2/sprite_space.png);
+    font-family: 'mheelemsanscondensed', Arial, "MS Trebuchet", sans-serif !important;
+    /*font-family: Arial, "MS Trebuchet", sans-serif;*/
+    font-size:20px;
+    background-position:0px 0px ;   
+    text-align: center;
+    vertical-align: middle;
+    line-height: 48px;
+    font-color:black;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+     user-select: none;
+    
+}
+
+#full_keypad_g1to2 .abc123_button_left{
+    position:absolute;
+    width:100px;
+    height:48px;
+    background-image:url(../images/full_keypad_g1to2/sprite_123.png);
+    font-family: 'mheelemsanscondensed', Arial, "MS Trebuchet", sans-serif !important;
+    /*font-family: Arial, "MS Trebuchet", sans-serif;*/
+    font-size:20px;
+    background-position:0px -49px;  
+    text-align: center;
+    vertical-align: middle;
+    line-height: 48px;
+    font-color:black;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+     user-select: none;
+    
+}
+
+
+#full_keypad_g1to2 .abc123_button_right{
+    position:absolute;
+    width:100px;
+    height:48px;
+    background-image:url(../images/full_keypad_g1to2/sprite_123.png);
+    font-family: 'mheelemsanscondensed', Arial, "MS Trebuchet", sans-serif !important;
+    /*font-family: Arial, "MS Trebuchet", sans-serif;*/
+    font-size:20px;
+    background-position:0px -49px ; 
+    text-align: center;
+    vertical-align: middle;
+    line-height: 48px;
+    font-color:black;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+     user-select: none;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+#full_keypad_g1to2   .right_shift_key{
+    position:absolute;
+    width:124px;
+    height:48px;
+    background-image:url(../images/full_keypad_g1to2/newarrow.png);
+    font-family: 'mheelemsanscondensed', Arial, "MS Trebuchet", sans-serif !important;
+    /*font-family: Arial, "MS Trebuchet", sans-serif;*/
+    font-size:20px;
+    background-position:0px 0px ;   
+    text-align: center;
+    vertical-align: middle;
+    line-height: 48px;
+    font-color:black;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+     user-select: none;
+    
+    
+    
+    
+}
+
+#full_keypad_g1to2  .left_shift_key{
+    position:absolute;
+    width:124px;
+    height:48px;
+    background-image:url(../images/full_keypad_g1to2/newarrow.png);
+    font-family: 'mheelemsanscondensed', Arial, "MS Trebuchet", sans-serif !important;
+    /*font-family: Arial, "MS Trebuchet", sans-serif;*/
+    font-size:20px;
+    background-position:0px 0px ;   
+    text-align: center;
+    vertical-align: middle;
+    line-height: 48px;
+    font-color:black;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+     user-select: none;
+    
+    
+    
+    
+}
+
+
+
+#full_keypad_g1to2  .alphabet_key{
+    position:absolute;
+    width:48px;
+    height:48px;
+    background-image:url(../images/full_keypad_g1to2/keysprite.png);
+    font-family: 'mheelemsanscondensed', Arial, "MS Trebuchet", sans-serif !important;
+    /*font-family: Arial, "MS Trebuchet", sans-serif;*/
+    font-size:20px;
+    background-position:0px 0px ;   
+    text-align: center;
+    vertical-align: middle;
+    line-height: 48px;
+    font-color:black;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+     user-select: none;
+     /*visibility:hidden;*/
+    
+}
+
+#full_keypad_g1to2 .group123{
+    /*visibility:visible;   */
+    z-index:1;
+}
+
+#full_keypad_g1to2 .groupABC{
+  /*visibility:hidden;  */
+   z-index:-1;
+}
+#full_keypad_g1to2 .shift_key{
+        
+}
+#full_keypad_g1to2 .shift_key.downstate{
+    /*background-position: 0px 0px !important;  */
+}
+#full_keypad_g1to2 .space_key.downstate{
+    background-position: 0px -48px !important;
+}
+#full_keypad_g1to2 .space{
+        
+}
+
+#full_keypad_g1to2 .downstate {
+   background-position: -48px 0px;
+   color:white;
+}
+#full_keypad_g1to2 .abc123_button_right.group123{
+    background-position: 0px -49px;
+}
+#full_keypad_g1to2 .abc123_button_left.group123{
+    background-position: 0px -49px;
+}
+#full_keypad_g1to2 .abc123_button_right.groupABC{
+    background-position: 0px 0px;
+}
+#full_keypad_g1to2 .abc123_button_left.groupABC{
+    background-position: 0px 0px;
+}
+#full_keypad_g1to2 .abc123_button_right.downstate.group123{
+    background-position: 0px -25px;
+}
+#full_keypad_g1to2 .abc123_button_left.downstate.group123{
+    background-position: 0px -25px;
+}
+#full_keypad_g1to2 .abc123_button_right.downstate.groupABC{
+    background-position: 0px -25px;
+}
+#full_keypad_g1to2 .abc123_button_left.downstate.groupABC{
+    background-position: 0px -25px;
+}
+
+ #full_keypad_g1to2 .enter_key.downstate {
+   background-position:0px -96px !important;
+}
+ #full_keypad_g1to2 .enter_key.fractionmode {
+   background-position:0px 0px !important;
+}
+
+
+
+
+#full_keypad_g1to2 .blinkingcursor{
+    position:absolute;
+    width:1px;
+    height:28px;
+    left:3px;
+    top:8px;
+    background-image:url(../images/full_keypad_g1to2/cursor.gif);
+}
+
+
+.pointer { 
+    cursor: pointer; 
+}
+
+
+/* special symbol key */
+
+
+
+#full_keypad_g1to2 .number_symbol_key {
+    position:absolute;
+    width:48px;
+    height:48px;
+    background-image:url(../images/full_keypad_g1to2/keysprite.png);
+    font-family: 'mheelemsanscondensed', Arial, "MS Trebuchet", sans-serif !important;
+    /*font-family: Arial, "MS Trebuchet", sans-serif;*/
+    font-size:20px;
+    background-position:0px 0px ;   
+    text-align: center;
+    vertical-align: middle;
+    line-height: 48px;
+    font-color:black;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+     user-select: none;
+     
+}
+
+
+#full_keypad_g1to2 .custom_symbol_key {
+    position:absolute;
+    width:48px;
+    height:48px;
+    background-position:0px 0px ;   
+}
+
+/* enter_key */
+#full_keypad_g1to2 .enter_key {
+    position:absolute;
+    background-image:url(../images/full_keypad_g1to2/sprite_enter.png);
+    width:150px;
+    height:48px;
+    background-position:-0px -48px ;
+    font-family: 'mheelemsanscondensed', Arial, "MS Trebuchet", sans-serif !important;
+    /*font-family: Arial, "MS Trebuchet", sans-serif;*/
+    font-size:20px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 48px;
+    font-color:black;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+     user-select: none;
+}
+
+
+#full_keypad_g1to2 .downstate {
+   background-position: -48px 0px;
+   color:white;
+}
+#full_keypad_g1to2 .space.downstate{
+    background-position: 0px -48px;
+}
+#full_keypad_g1to2 .shift_key.downstate{
+    opacity:0.5;
+    background-position:0px 0px;
+}
+#full_keypad_g1to2 .shift_key.shifted {
+    background-position: -0px -48px;
+}
+#full_keypad_g1to2 .shift_key.shifted.downstate {
+    background-position: -0px -48px;
+}
+#full_keypad_g1to2 .abc123_button_right.group123{
+    background-position: 0px -49px;
+}
+#full_keypad_g1to2 .abc123_button_left.group123{
+    background-position: 0px -49px;
+}
+#full_keypad_g1to2 .abc123_button_right.groupABC{
+    background-position: 0px 0px;
+}
+#full_keypad_g1to2 .abc123_button_left.groupABC{
+    background-position: 0px 0px;
+}
+#full_keypad_g1to2 .abc123_button_right.downstate.group123{
+    background-position: 0px -49px;
+    opacity:0.5;
+}
+#full_keypad_g1to2 .abc123_button_left.downstate.group123{
+    background-position: 0px -49px;
+    opacity:0.5;
+}
+#full_keypad_g1to2 .abc123_button_right.downstate.groupABC{
+    background-position: 0px 0px;
+    opacity:0.5;
+}
+#full_keypad_g1to2 .abc123_button_left.downstate.groupABC{
+    background-position: 0px 0px;
+    opacity:0.5;
+}
+
+#full_keypad_g1to2 .enter_key.downstate {
+   background-position:0px -96px;
+}
+#full_keypad_g1to2 .enter_key.fractionmode {
+   background-position:0px 0px;
+}
+
+            
+#full_keypad_g1to2  .backspace {
+    background-image:url(../images/full_keypad_g1to2/backspace.png);
+}
+
+#full_keypad_g1to2  .clear {
+    background-image:url(../images/full_keypad_g1to2/clear.png);
+}
+
+#full_keypad_g1to2  .make_fraction {
+    background-image:url(../images/full_keypad_g1to2/fraction.png);
+}
+

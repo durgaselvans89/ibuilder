@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Learning Object Iteration</title>
+ 		
+	<style type="text/css" media="screen">
+		.txt span {
+			visibility: hidden;
+		}
+	</style>
+	
+	<!-- Load scrips at end for faster page load -->
+	<script src="js/libs/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/libs/jquery-migrate-1.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript" charset="utf-8">
+		
+		function getUrlVars() {
+		    var vars = {};
+		    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		        vars[key] = value;
+		    });
+		    return vars;
+		}
+		
+		var media_path = getUrlVars()["media"];
+		var entryPoint = getUrlVars()["entryPoint"];
+				
+		var mode = 'student';
+						
+		if ( media_path == undefined ) {
+			window.location = "dir.html";
+		}
+		
+		$.ajax({
+		    type: 'GET',
+		    url: media_path + '/' + entryPoint,
+			contentType: 'application/json; charset=utf-8',
+			dataType: "json",
+			cache: false,
+			success: function(data) {
+				$.template = data.template;
+				window.location = 'templates/'+$.template+'/index.html?media='+media_path+'&entryPoint='+entryPoint+'';
+			},
+		    error: function() {
+		        
+		    }
+		});
+		
+	</script>
+	
+</head>
+ 
+<body>
+
+</body>
+</html>

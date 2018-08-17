@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>INTERACTIVE TEMPLATE ITERATION BUILDER</title>
+ 		
+	<style type="text/css" media="screen">
+		.txt span {
+			visibility: hidden;
+		}
+	</style>	
+	
+	<!-- Load scrips at end for faster page load -->
+	<script src="js/libs/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/libs/jquery-migrate-1.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	
+	<!-- Plugins -->
+	<link rel="stylesheet" href="css/tipsy.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<script src="js/libs/jquery.tipsy.js" type="text/javascript" charset="utf-8"></script>
+	
+	<!-- jQuery UI -->
+	<script src="js/libs/jquery-ui-1.10.4/ui/jquery.ui.core.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/libs/jquery-ui-1.10.4/ui/jquery.ui.widget.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/libs/jquery-ui-1.10.4/ui/jquery.ui.mouse.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/libs/jquery-ui-1.10.4/ui/jquery.ui.draggable.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/libs/jquery-ui-1.10.4/ui/jquery.ui.resizable.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- File Upload Plugin -->
+	<script src="js/libs/jquery.fileupload.js" type="text/javascript" charset="utf-8"></script>
+
+	<!-- Sound manager/Feedback -->
+	<script src="js/libs/soundmanager/script/soundmanager2.js" type="text/javascript" charset="utf-8"></script>
+	<!-- Production -->
+	<!-- <script src="js/libs/soundmanager/script/soundmanager2-nodebug-jsmin.js" type="text/javascript" charset="utf-8"></script> -->
+	<script src="js/sounds.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/feedback.js" type="text/javascript" charset="utf-8"></script>
+	
+	<script type="text/javascript" charset="utf-8">
+		
+		function getUrlVars() {
+		    var vars = {};
+		    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		        vars[key] = value;
+		    });
+		    return vars;
+		}
+		
+		var media_path = getUrlVars()["media"];
+		var entryPoint = getUrlVars()["entryPoint"];
+		var template = getUrlVars()["template"];
+				
+		document.write('<link rel="stylesheet" type="text/css" href="templates/em02/css/styles.css">');	
+		document.write('<script src="templates/em02/js/formBuilder.js" type="text/javascript" charset="utf-8"><\/script>');	
+		document.write('<script src="templates/em02/js/pageBuilder.js" type="text/javascript" charset="utf-8"><\/script>');	
+		
+		var mode = 'edit';
+				
+		if ( media_path == undefined ) {
+			//window.location = "dir.html";
+		}
+		
+		var LO_page_app = {
+
+		    onReady: function() {
+					
+				$.cover_slide_options = { 
+					cursor: "pointer",
+					containment: "parent",
+					handle: ".cover_slide_handel"
+				};
+												
+				$( ".cover_slide" ).draggable($.cover_slide_options);
+				
+			}
+			
+		}
+		
+		$( document ).ready( LO_page_app.onReady );
+			
+	</script>
+	
+	<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.1/themes/base/jquery-ui.css"/>
+	
+	<link rel="stylesheet" href="css/form_style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	
+	<style type="text/css" media="screen">
+		.cover {
+			overflow: hidden;
+		}
+		
+		.cover_slide {
+			position: relative;
+			background: url('templates/em02/images/covers_back.png') repeat;
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+			-webkit-box-shadow: 2px 2px 5px 0px rgba(50, 50, 50, 0.54);
+			-moz-box-shadow:    2px 2px 5px 0px rgba(50, 50, 50, 0.54);
+			box-shadow:         2px 2px 5px 0px rgba(50, 50, 50, 0.54);
+		}
+		
+		.cover[data-direction="horizontal"] .cover_slide_handel {
+			width: 20px;
+			height: 34px;
+			cursor: pointer;
+			background: url('templates/em02/images/covers_h_handle.png') no-repeat;
+			margin: auto 0;
+			position: absolute;
+			top: -5px; left: 0; bottom: 0; right: 0;
+		}
+		
+		.cover[data-direction="vertical"] .cover_slide_handel {
+			width: 38px;
+			height: 20px;
+			cursor: pointer;
+			position: relative;
+			top: 1px;
+			margin: 0 auto;
+			background: url('templates/em02/images/covers_v_handle.png') no-repeat;
+		}
+		
+	</style>
+	
+</head>
+ 
+<body>
+
+<div id="cover_set" class="covers" data-id="0">	
+
+<div id="cover_0" style="top: 20px; left: 20px; position: absolute; width: 220px; height: 120px;" class="cover" data-direction="horizontal" data-block="cover" data-id="0">
+	<div class="cover_slide_scroll" style="width: 400px; height: 100px;">
+		<div class="cover_slide cover_slide" style="width: 200px; height: 100px;">
+			<div class="cover_slide_handel"></div>
+		</div>
+	</div>
+</div>
+
+<div id="cover_1" style="top: 200px; left: 200px; position: absolute; width: 220px; height: 120px;" class="cover" data-direction="vertical" data-block="cover" data-id="1">
+	<div class="cover_slide_scroll" style="width: 200px; height: 200px;">
+		<div class="cover_slide cover_slide" style="width: 200px; height: 100px;">
+			<div class="cover_slide_handel"></div>
+		</div>
+	</div>
+</div>
+
+</div>		
+	
+	
+<script type="text/javascript" charset="utf-8">	
+
+	var getProtocal = document.location.protocol;
+
+	if ( getProtocal == 'https:' ) {
+		var protocalURL = 'https://c328740.ssl.cf1.rackcdn.com/mathjax/2.1-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+	} else {
+		var protocalURL = 'http://cdn.mathjax.org/mathjax/2.1-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+	}
+
+	document.write('<script type="text/javascript" src="'+protocalURL+'"><\/script>');
+
+</script>
+
+<script type="text/x-mathjax-config">
+//This turns most math to sans-serif
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var TEX = MathJax.InputJax.TeX;
+  var PREFILTER = TEX.prefilterMath;
+  TEX.Augment({
+    prefilterMath: function (math,displaymode,script) {
+      return PREFILTER.call(TEX,"\\sf{"+math+"}",displaymode,script);
+    }
+  });
+});
+</script>
+
+</body>
+</html>

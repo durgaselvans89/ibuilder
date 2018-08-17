@@ -1,0 +1,51 @@
+{
+	"template": "ps10",
+	"iteration": {},
+	"layout": "A",
+	"grades": "mid",
+    "title": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "Square Example",
+            "top": 166,
+            "left": 50,
+            "width": "default"
+        }
+    ],
+    "content_box": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "This stick of butter is shaped like<br>a rectangular prism.<br><br>[Butter image that is 12 x 3 x 4]<br><br>Carla cuts the stick along the<br>dotted line to create two<br>identical prisms:<br><br>[Butter image cut in half with cross section shaded]<br><br>Use the Connect Line tool to<br>draw the shaded part of the stick<br>of butter.",
+            "top": 286,
+            "left": 49,
+            "width": "default"
+        }
+    ],
+	"coordinate_object": [
+		{
+      "coordinate_object_answer": "",
+      "coordinate_object_data": "",
+      "scale": "",
+      "sides": "",
+      "points": "",
+      "sideLengths": "3,4,3,4",
+      "area": "",
+      "perimeter": "",
+      "square":"false",
+      "rectangle":"true",
+      "triangle":"false",
+
+      "name": "",
+      "left": "default",
+      "top": "default",
+      "type": "txt",
+      "width": "default"
+		}
+	],
+	"font_size": 1,
+	"auto_check": "true"
+}

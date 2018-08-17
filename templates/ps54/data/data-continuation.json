@@ -1,0 +1,52 @@
+ {
+    "auto_check": "true",
+    "title": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "Continuation Example",
+            "top": 166,
+            "left": 50,
+            "width": "default"
+        }
+    ],
+    "content_box": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "Jose is transferring his drawing<br>of a triangular roof to a<br>coordinate plane.<br><br>[house picture]<br><br>He plots point A at (-5,2) and<br>point B at (1,6).<br><br>The length of the base of the<br>roof is 12 units in length.<br><br>Use the Connect Line tool to<br>graph point C and connect the<br>three points.",
+            "top": 286,
+            "left": 49,
+            "width": "default"
+        }
+    ],
+    "coordinate_object": [
+        {
+            "coordinate_object_answer": "-5,2:1,6:7,2",
+            "coordinate_object_data": "-5,2:1,6",
+            "coordinate_object_type": "Point",
+            "object_data_open": "true",
+            "connect": "true",
+            "label_x": "x",
+            "label_y": "y",
+            "quadrants": "4",
+            "scale_x": "11",
+            "scale_y": "11",
+            "show_scale": "true",
+            "slope": "",
+
+            "name": "",
+            "top": "default",
+            "left": "default",
+            "type": "txt",
+            "width": "default"
+        }
+    ],
+    "font_size": 1,
+    "grades": "mid",
+    "iteration": {},
+    "layout": "A",
+    "template": "ps08"
+}

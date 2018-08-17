@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Learning Object Iteration</title>
+	
+	<!--<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" title="no title" charset="utf-8">-->
+	
+	<style>
+	html, body{
+	    margin:0px;padding:0px;
+	}
+	
+	.list{}
+	
+	/*#coordinateGrid {
+		position:absolute;
+		display:inline-block;
+		z-index: 100;
+		top:100px;
+		left:450px;
+	}
+
+	#coordinateGrid.correct { border: 2px green solid; }
+	#coordinateGrid.wrong { border: 2px red solid; }
+	#coordinateGrid.quads .q2, #coordinateGrid.quads .q3, #coordinateGrid.quads .q4 { display: block; }*/
+	
+	#coordinateGridCanvas {
+		position:absolute;
+	}
+
+	/*#controls { position: absolute; left: 0; top: -50px; }*/
+	
+	svg{
+		z-index: 999;
+		pointer-events:none;
+	}
+
+	svg path{
+		pointer-events:all;
+	}
+	
+	svg circle{
+		pointer-events:none;
+	}
+	
+	.notouch{pointer-events:none;}
+	
+	.xaxis{position:absolute;}
+	
+	.yaxis{position:absolute;}
+	
+	/*.coordinate {
+		float: left; 
+		z-index: 1;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		border-right: 1px solid rgba(0,0,0,0.3);
+		border-bottom: 1px solid rgba(0,0,0,0.3);
+ 	}
+ 	.coordinate.end { border-right: none; }
+ 	.coordinate.last { border-bottom: none; }
+	
+	.q1,.q2,.q3,.q4 { float:left; border: 1px solid black; display: none; }
+	.q1 { display: block; }*/
+
+	.point{
+	  width:10px;
+	  height:10px;
+	  border-radius:5px;
+	  background:blue;
+	  display:block;
+	  position:absolute;
+	  z-index:99;
+	  margin:-5px 0px 0px -5px;
+	}
+
+	#connect, #clearButton, #submitButton{
+    font-size:16px;
+    padding:5px 5px;
+	}
+
+	.toggle {
+	  border: 1px solid silver;
+	  display: inline-block;
+	  margin: 0.5em;
+	  padding: 0.5em;
+	  color: white;
+	}
+
+	.toggle-inner-yes {
+	  background-color: green;
+	}
+
+	.toggle-inner-no {
+	  background-color: red;
+	}.toggle {
+	  border: 1px solid silver;
+	  display: inline-block;
+	  margin: 0.5em;
+	  padding: 0.5em;
+	  color: white;
+	}
+
+	.toggle-inner-yes {
+	  background-color: green;
+	}
+
+	.toggle-inner-no {
+	  background-color: red;
+	}
+
+	#connect.on { border-color: blue; }
+
+	.labels { width: 100%; height: 100%; position: absolute; left: 0; top: 0; }
+	.labels > div { position: absolute; }
+
+	</style>
+	
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+	
+	<script type="text/javascript" charset="utf-8">
+	
+		window.onload = function(){
+			//page_builder_app.onReady(); stopped loading twice
+		};
+		
+		function getUrlVars() {
+		    var vars = {};
+		    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		        vars[key] = value;
+		    });
+		    return vars;
+		}
+		
+		var media_path = getUrlVars()["media"];
+		var entryPoint = getUrlVars()["entryPoint"];
+		
+		var mode = 'student';
+		
+		if ( mode == 'student' ) {
+			// add javascript for template mode
+		}
+
+		if ( media_path !== undefined ) {
+      document.write("<scr"+"ipt src='js/libs/kinetic-v5.0.1.min.js' type='text/javascript' charset='utf-8'></scr"+"ipt>");
+      document.write("<scr"+"ipt src='js/libs/underscore-min.js' type='text/javascript' charset='utf-8'></scr"+"ipt>");
+      document.write("<scr"+"ipt src='js/pageBuilder.js' type='text/javascript' charset='utf-8'></scr"+"ipt>");
+      document.write("<scr"+"ipt src='js/libs/html2canvas.js' type='text/javascript' charset='utf-8'></scr"+"ipt>");
+      // document.write("<scr"+"ipt src='js/ps08.js' type='text/javascript' charset='utf-8'></scr"+"ipt>");
+      // document.write("<scr"+"ipt src='Grading/grading.js' type='text/javascript' charset='utf-8'></scr"+"ipt>");
+		}
+		
+	</script>
+		
+</head>
+ 
+<body>
+
+<div id="wrapper">	
+	
+	<div id="contentTEMP"></div>
+	
+</div>
+
+<script type="text/javascript" charset="utf-8">	
+	
+	var getProtocal = document.location.protocol;
+	
+	if ( getProtocal == 'https:' ) {
+		var protocalURL = 'https://c328740.ssl.cf1.rackcdn.com/mathjax/2.1-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+	} else {
+		var protocalURL = 'http://cdn.mathjax.org/mathjax/2.1-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+	}
+	
+	document.write('<script type="text/javascript" src="'+protocalURL+'"><\/script>');
+		
+</script>
+
+
+<script type="text/x-mathjax-config">
+//This turns most math to sans-serif
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var TEX = MathJax.InputJax.TeX;
+  var PREFILTER = TEX.prefilterMath;
+  TEX.Augment({
+    prefilterMath: function (math,displaymode,script) {
+      return PREFILTER.call(TEX,"\\sf{"+math+"}",displaymode,script);
+    }
+  });
+});
+</script>
+
+</body>
+
+</html>

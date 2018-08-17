@@ -1,0 +1,96 @@
+{
+   "template":"em02",
+	"attempts":"1,5,infinite",
+   "feedback_correct":[
+      {
+         "id":0,
+         "name":"feedback_correct_vo_1",
+			"select":"Correct!",
+         "text":"Correct!"
+      },
+      {
+         "id":1,
+         "name":"feedback_correct_vo_2",
+			"select":"[M] You got it!",
+         "text":"You got it!"
+      }
+   ],
+   "feedback_incorrect":[
+      {
+         "id":0,
+         "name":"feedback_incorrect_vo_1",
+			"select":"This is not correct.",
+         "text":"This is not correct."
+      }
+   ],
+   "feedback_not_all_correct":[
+      {
+         "id":0,
+         "name":"feedback_not_all_correct_vo_1",
+			"select":"You need to choose more answers.",
+         "text":"You need to choose more answers."
+      },
+      {
+         "id":1,
+         "name":"feedback_not_all_correct_vo_2",
+			"select":"[M] You are missing part of the answer.",
+         "text":"You are missing part of the answer."
+      }
+   ],
+   "feedback_one_wrong":[
+      {
+         "id":0,
+         "name":"feedback_one_wrong_vo_1",
+			"select":"One of your answers is not correct.",
+         "text":"One of your answers is not correct."
+      },
+      {
+         "id":1,
+         "name":"feedback_one_wrong_vo_2",
+			"select":"One of your answers is wrong.",
+         "text":"One of your answers is wrong."
+      }
+   ],
+   "feedback_some_wrong":[
+      {
+         "id":0,
+         "name":"feedback_some_wrong_vo_1",
+			"select":"Some of your answers are not correct.",
+         "text":"Some of your answers are not correct."
+      },
+      {
+         "id":1,
+         "name":"feedback_some_wrong_vo_2",
+			"select":"Some of your answers are wrong.",
+         "text":"Some of your answers are wrong."
+      }
+   ],
+   "feedback_all_wrong":[
+      {
+         "id":0,
+         "name":"feedback_all_wrong_vo_1",
+			"select":"All of your answers are not correct.",
+         "text":"All of your answers are not correct."
+      },
+      {
+         "id":1,
+         "name":"feedback_all_wrong_vo_2",
+			"select":"All of your answers are wrong.",
+         "text":"All of your answers are wrong."
+      }
+   ],
+   "feedback_last_attempt":[
+      {
+         "id":0,
+         "name":"feedback_last_attempt_vo_1",
+			"select":"Ask your teacher to help you.",
+         "text":"Ask your teacher to help you."
+      },
+      {
+         "id":1,
+         "name":"feedback_last_attempt_vo_2",
+			"select":"Ask your teacher for help.",
+         "text":"Ask your teacher for help."
+      }
+   ]
+}

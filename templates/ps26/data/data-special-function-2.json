@@ -1,0 +1,58 @@
+ {
+    "auto_check": "true",
+    "title": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "Special Function Example 2",
+            "top": 166,
+            "left": 50,
+            "width": "default"
+        }
+    ],
+    "content_box": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "Plot this Special Function.<br><br>2 if 0 < x ≤ 1<br>5 if 1 < x ≤ 2<br>8 if 2 < x ≤ 3<br>11 if 3 < x ≤ 4<br>14 if 4 < x ≤ 5",
+            "top": 286,
+            "left": 49,
+            "width": "default"
+        }
+    ],
+    "coordinate_object": [
+        {
+            "coordinate_object_answer": "0,2,>:0,<=:1|0,5,>:1,<=:2|0,8,>:2,<=:3|0,11,>:3,<=:4|0,14,>:4,<=:5",
+            "coordinate_object_data": "",
+            "coordinate_object_type": "Segment",
+            "object_data_open": "",
+            "connect": "true",
+            "colorMode": "false",
+            "lineOption": "true",
+            "shadeOption": "true",
+            "arrowOption": "true",
+            "label_x": "x",
+            "label_y": "y",
+            "quadrants": "4",
+            "scale_x": "9",
+            "scale_y": "20",
+            "show_scale": "true",
+            "show_origin": "true",
+            "slope": "",
+            "inequalities": "false",
+            "no_solution": "true",
+
+            "top": "default",
+            "left": "default",
+            "type": "txt",
+            "width": "default"
+        }
+    ],
+    "font_size": 1,
+    "grades": "mid",
+    "iteration": {},
+    "layout": "A",
+    "template": "ps09"
+}

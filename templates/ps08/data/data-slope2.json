@@ -1,0 +1,52 @@
+ {
+    "auto_check": "true",
+    "title": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "Slope 2 Example",
+            "top": 166,
+            "left": 50,
+            "width": "default"
+        }
+    ],
+    "content_box": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "Use the line tool to graph<br>a system of two equations that<br>has a single solution of<br>(-2,-3).",
+            "top": 286,
+            "left": 49,
+            "width": "default"
+        }
+    ],
+    "coordinate_object": [
+        {
+            "coordinate_object_answer": "-2,-3|-2,-3",
+            "coordinate_object_data": "",
+            "coordinate_object_type": "Line",
+            "object_data_open": "",
+            "connect": "true",
+            "label_x": "x",
+            "label_y": "y",
+            "quadrants": "4",
+            "scale_x": "9",
+            "scale_y": "9",
+            "show_scale": "true",
+            "slope": "",
+
+            "name": "",
+            "top": "default",
+            "left": "default",
+            "type": "txt",
+            "width": "default"
+        }
+    ],
+    "font_size": 1,
+    "grades": "mid",
+    "iteration": {},
+    "layout": "A",
+    "template": "ps08"
+}

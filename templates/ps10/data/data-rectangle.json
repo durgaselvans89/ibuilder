@@ -1,0 +1,51 @@
+{
+	"template": "ps10",
+	"iteration": {},
+	"layout": "A",
+	"grades": "mid",
+    "title": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "Rectangle Example",
+            "top": 166,
+            "left": 50,
+            "width": "default"
+        }
+    ],
+    "content_box": [
+        {
+            "id": 0,
+            "type": "txt",
+            "name": "",
+            "text": "Micah constructs a rectangular<br>prism with a volume of 360 cubic<br>units. The height of his prism is<br>10 units.<br><br>Micah claims that the base of the<br>prism must be square.<br><br>Use the Connect Line tool to<br>draw a base that shows Micah's<br>claim is incorrect.",
+            "top": 286,
+            "left": 49,
+            "width": "default"
+        }
+    ],
+	"coordinate_object": [
+		{
+      "coordinate_object_answer": "",
+      "coordinate_object_data": "",
+      "scale": "",
+      "sides": "",
+      "points": "",
+      "sideLengths": "",
+      "area": "36",
+      "perimeter": "",
+      "square":"false",
+      "rectangle":"true",
+      "triangle":"false",
+
+      "name": "",
+      "left": "default",
+      "top": "default",
+      "type": "txt",
+      "width": "default"
+		}
+	],
+	"font_size": 1,
+	"auto_check": "true"
+}

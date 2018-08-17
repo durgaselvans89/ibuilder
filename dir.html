@@ -1,0 +1,515 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+    <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>INTERACTIVE TEMPLATE ITERATION BUILDER</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Christian Shepard">
+	<!-- Date: 2012-08-23 -->
+        <style type="text/css">
+            body{
+                text-align: center;
+                margin-top: 0px;
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 0;
+                padding: 0;
+                border: 0;
+                background-color: #f5f5f5;
+                font-family: "Lucida Grande",arial,sans-serif;
+                font-size: 12px;
+				height: 100%;
+            }
+
+            #maincontent{
+                width:800px;
+                margin: 0 auto;
+				height: 100%;
+            }
+
+            #messagebox{
+                width:800px;
+                height:20px;
+                position: relative;
+                left: 0px;
+                top: 4px;
+                text-align: center;
+            }
+            
+            #header{
+                width:800px;
+                height:60px;
+                background-image: url('images/hstrip.jpg');
+                position: relative;
+                left: 0px;
+                top: 5px;
+                border-right: 1px solid #6ad1f9;
+                border-left: 1px solid #6ad1f9;
+            }
+
+            #mast{
+                position: absolute;
+                left:20px;
+                top:24px;
+                font-weight: bold;
+                color:white;
+            }
+
+            #demo{
+                position: absolute;
+                left:750px;
+                top:24px;
+                font-weight: bold;
+                color:#f9ce8a;
+            }
+
+            #content{
+                width:800px;
+               min-height: 1800px;
+                background-color: #eeeeee;
+                position: relative;
+                left: 0px;
+                top: 0px;
+                border-right: 1px solid #6ad1f9;
+                border-left: 1px solid #6ad1f9;
+            }
+            
+            #footer{
+                width:802px;
+                min-width:800px;
+                height:10px;
+                min-height: 10px;
+                background-image: url('images/dstrip.jpg');
+                background-repeat: repeat-x;
+                position: relative;
+                left: 0px;
+                top: 0px;
+            }
+
+            #leftd{
+                width: 360px;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                text-align: left;
+            }
+
+            #rightd{
+                width: 400px;
+                height: 440px;
+                position: absolute;
+                top: 20px;
+                left: 400px;
+                text-align: left;
+            }
+
+            .bh{
+                color:black;
+                font-weight: bold;
+                font-size: 11px;
+            }
+
+            .bh2{
+                color:#461B7E;
+                font-weight: bold;
+                font-size: 11px;
+            }
+
+            .bh3{
+                color:#35b5e7;
+                font-weight: bold;
+                font-size: 11px;
+            }
+
+            li{
+                color:#898989;
+                font-weight: bold;
+                font-size: 11px;
+            }
+
+            #demoty{
+                color:#fea518;
+                font-size: 11px;
+            }
+            
+            #mybox{
+                width:200px;
+                height:20px;
+                float: left;
+                font-family: "Lucida Grande",arial,sans-serif;
+                font-size: 13px;
+            }
+        </style>
+        <script src="js/libs/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		 var question_arr = ["CPane Graphing_Complex", "CPlane Graphing_Simple", "Drag and Drop", "Grid Paper Graphing", "Highlighting", "Multiple Choice", "Number Line", "Square Shading", "Type Entry"];
+		 var media_path="/parcc_svn/Media_Source/CBT-WBT/Alpha/ibuilder_2015/ibuilder/parcc/iterations/";
+		 var json_name='data.json';
+		 var link_arr=[
+		 				{'type1':1,'type2':1,'media':'','templateid':'','entrypoint':''},
+		 				{'type1':1,'type2':2,'media':'ps56_0001','templateid':'ps56','entrypoint':json_name},
+						{'type1':1,'type2':3,'media':'','templateid':'','entrypoint':''},
+						{'type1':1,'type2':4,'media':'','templateid':'','entrypoint':''},
+						{'type1':1,'type2':5,'media':'','templateid':'','entrypoint':''},
+						{'type1':1,'type2':6,'media':'','templateid':'','entrypoint':''},
+						{'type1':1,'type2':7,'media':'','templateid':'','entrypoint':''},
+						{'type1':1,'type2':8,'media':'','templateid':'','entrypoint':''},
+						{'type1':1,'type2':9,'media':'','templateid':'','entrypoint':''},
+						{'type1':2,'type2':2,'media':'ps55_0001','templateid':'ps55','entrypoint':json_name},
+						{'type1':2,'type2':3,'media':'','templateid':'','entrypoint':''},
+						{'type1':2,'type2':4,'media':'PS510_0001','templateid':'ps510','entrypoint':json_name},
+						{'type1':2,'type2':5,'media':'ps58_0001','templateid':'ps58','entrypoint':json_name},
+						{'type1':2,'type2':7,'media':'ps57_0001','templateid':'ps57','entrypoint':json_name},
+						{'type1':2,'type2':8,'media':'ps59_0001','templateid':'ps59','entrypoint':json_name},
+						{'type1':2,'type2':9,'media':'ps54_0001','templateid':'ps54','entrypoint':json_name}
+						/*{'type1':2,'type2':6,'media':'ps54_0001','templateid':'ps54','entrypoint':json_name}*/
+						  
+		 			  ];
+		 
+		 $(function(){
+			updateQuestiontypes();
+			$('#qtype1').unbind();
+			$('#qtype1').bind('change',getQuestiontype);
+			$('#qtype2').unbind();
+			$('#qtype2').bind('change',getQuestiontype);
+		 })
+		 
+		 function getQuestiontype(){
+			var type1=$('#qtype1').val();
+			if(type1!=0){
+				var type2=$('#qtype2').val();
+				if(type2!=0){//alert(type1+" -- "+type2)
+					for(var j=0;j<link_arr.length;j++){
+						if((link_arr[j]['type1']==type1 && link_arr[j]['type2']==type2) ||
+						 	(link_arr[j]['type1']==type2 && link_arr[j]['type2']==type1)){
+							window.location="builder.php?media="+media_path+link_arr[j]['media']+"&entryPoint="+link_arr[j]['entrypoint']+"&template="+link_arr[j]['templateid'];	
+						}
+					}
+				}	
+			}
+		 }
+		 
+		 function updateQuestiontypes(){
+		 	$('#qtype1').append($('<option/>',{'value':0,'selected':true}).append('Select type 1'));
+			$('#qtype2').append($('<option/>',{'value':0,'selected':true}).append('Select type 2'));
+			for(var i=0;i<question_arr.length;i++){
+				$('#qtype1').append($('<option/>',{'value':(i+1)}).append(question_arr[i]));
+				$('#qtype2').append($('<option/>',{'value':(i+1)}).append(question_arr[i]));
+			}
+		 }
+		 
+	</script>
+	
+    </head>
+    <body>
+        <div id="maincontent">
+            
+            <div id="header">
+                <span id="mast">PARCC/SBAC (PS)</span>
+                <span id="demo"></span>
+
+            </div>
+            <div id="content">
+                <div id="leftd">
+                  <table border="0" cellspacing="20" cellpadding="5" width="80%" >
+	
+    <tr>
+		<td><strong>Iteration Builder Samples</strong></td>
+	</tr>
+	<tr>
+		<td>
+			1. Highlighter<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps01_0001&entryPoint=data.json&template=ps01">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			2. Shading<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps02_0001&entryPoint=data.json&template=ps02">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			3. Type Entry<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps03_0001&entryPoint=data.json&template=ps03">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			4. Drag -N- Drop<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps04_0001&entryPoint=data.json&template=ps04">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>
+			5. Number Line<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps05_0001&entryPoint=data.json&template=ps05">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			8. Coordinate Plane Graphing<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps08_0001&entryPoint=data.json&template=ps08">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			9. Complex Coordinate Plane Graphing<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps09_0001&entryPoint=data.json&template=ps09">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			10. Grid Paper Graphing<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps10_0001&entryPoint=data.json&template=ps10">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			11. Grid Paper Graphing<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps11_0001&entryPoint=data.json&template=ps11">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+    <tr>
+    	<td>
+			20. Multiple Template<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps20_0001&entryPoint=data.json&template=ps20">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+     <tr>
+    	<td>
+			22. Multi-Choice and Multi-Choice<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps22_0001&entryPoint=data.json&template=ps22">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+   <!-- <tr>
+
+    	<td>
+			23. Multi-Choice and Drag and Drop<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps23_0001&entryPoint=data.json&template=ps23">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>-->
+   <tr>
+
+    	<td>
+			24. Multiple Choice and Type Entry
+<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps24_0001&entryPoint=data.json&template=ps24">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+<tr>
+
+    	  <td>
+			25. Multiple Choice and Coordinate Plane Graphing Simple
+
+<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps25_0001&entryPoint=data.json&template=ps25">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+    <tr>
+
+    	<td>
+			26. Multiple Choice and Coordinate Plane Graphing Complex
+
+<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps26_0001&entryPoint=data.json&template=ps26">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+    
+</table>
+                  
+                  
+                  
+                  
+                  
+                </div>
+                 <div id="rightd">
+                  <table border="0" cellspacing="20" cellpadding="5" width="80%">
+                   <tr>
+		<td><strong>Iteration Builder Samples</strong></td>
+	</tr>
+                    <tr>
+
+    	<td>
+			27. Multiple Choice and Number Line
+
+<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps27_0001&entryPoint=data.json&template=ps27">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+    <!-- <tr>
+    	<td>
+			28. Multiple Choice and Highlighting
+
+<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps28_0001&entryPoint=data.json&template=ps28">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>  -->
+    <tr>
+    	<td>
+			29. Multiple Choice and Square Shading
+
+<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps29_0001&entryPoint=data.json&template=ps29">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+       <tr>
+    	<td>
+			210. Multiple Choice and Grid Paper Graphing
+
+<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps210_0001&entryPoint=data.json&template=ps210">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+     <tr>
+    	<td>
+			32. Drag-N-Drop and Multi-Choice<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps32_0001&entryPoint=data.json&template=ps32">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+    
+    <!--<tr>
+    	<td>
+			34. Drag -N- Drop and Type Entry<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps34_0001&entryPoint=data.json&template=ps34">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+ <tr>
+    	<td>
+			35. Drag and Drop CPlane Graphing Simple
+<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps35_0001&entryPoint=data.json&template=ps35">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+    <tr>
+    	<td>
+			36. Drag and Drop CPlane Graphing Complex
+<br>
+
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps36_0001&entryPoint=data.json&template=ps36">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+     <tr>
+    	<td>
+			37. Drag and Drop Number Line
+
+<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps37_0001&entryPoint=data.json&template=ps37">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+     <tr>-->
+    	<td>
+			47. Type Entry and Number Line
+
+
+<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps47_0001&entryPoint=data.json&template=ps47">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+     <tr>
+    	<td>
+			54. Coordinate Plane Graphing and Type Entry<br>
+			
+			<ul>  
+				<li><a href="builder.php?media=/parcc/iterations/ps54_0001&entryPoint=data.json&template=ps54">Sample 1</a></li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+    	<td>
+			Choose question type<br>
+			<ul style="list-style-type:none">  
+				<li ><select id="qtype1"></select></li><br>
+                <li><select id="qtype2"></select></li>
+			</ul>
+		</td>
+	</tr>
+                   </table>
+                </div>       
+            </div>
+            <div id="footer">
+                &nbsp;
+            </div>
+        </div>       
+    </body>
+</html>

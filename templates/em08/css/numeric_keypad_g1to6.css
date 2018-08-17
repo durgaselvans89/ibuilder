@@ -1,0 +1,413 @@
+
+
+@font-face { font-family: 'reportschool'; src: url('fonts/reportschoolrg-regular-webfont.woff'); }
+
+
+#numeric_keypad_G1to6 .displaywindow { 
+	left:10px;
+	top:4px;
+	height:45px;
+	width:195px;
+	position:absolute;
+	overflow:hidden;
+
+}
+
+
+#numeric_keypad_G1to6  .showbuttondisabled {
+	opacity:0.6 !important;
+	cursor:default !important;
+	
+}
+
+
+#numeric_keypad_G1to6 .disableforfractions{
+	
+}
+
+
+#numeric_keypad_G1to6  .closebutton {
+    left:200px;
+	top:0px;
+	height:30px;
+	width:20px;
+	position:absolute;
+	/*opacity:.5;
+	background-color:#B2F0FF;
+	visibility:hidden;*/
+	
+}
+
+
+
+
+
+
+#numeric_keypad_G1to6 .display {
+	left:5px;
+	top:0px;
+	height:45px;
+	width:auto;
+	position:absolute;
+	opacity:1;
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif;
+	/*font-family:Arial, 'MS Trebuchet', sans-serif;*/
+	font-size:19px;
+	line-height:45px;
+	/*background-color:#E8E7E3;*/
+	letter-spacing: 0.1em;	
+}
+
+/* no longer used */
+#numeric_keypad_G1to6 .countwindow {
+	left:124px;
+	top:0px;
+	height:26px;
+	width:30px;
+	position:absolute;
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif;
+	/*font-family:Arial, 'MS Trebuchet', sans-serif;*/
+	font-size:14px;
+	/*border:2px solid gray;*/
+	color:light gray;
+	text-align:center;
+	overflow:hidden;
+	line-height:26px;
+}
+
+/* no longer used */
+#numeric_keypad_G1to6 .remainingamounttext{
+	left:25px;
+	top:0px;
+	position:absolute;
+	width:125px;
+	height:23px;
+	background-image:url(../images/full_keypad_g1to2/char_remain.png);
+}
+
+
+#content {
+	height: 100%;
+}
+
+/* changed*/
+#numeric_keypad_G1to6 {
+	position:absolute;
+	top:100px;
+	left:30px;
+	width:224px;
+	height:300px;
+	background-color:#B2F0FF;
+	background-image: url(../images/numeric_keypad_g1to6/full_keypad.png);
+}
+
+#numeric_keypad_G1to6 .dragbar {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:225px;
+	height:25px;
+	background-image: url(../images/numeric_keypad_g1to6/numeric_topbar.png);
+}
+
+
+#numeric_keypad_G1to6 .display_and_pad {
+	position:absolute;
+	top:25px;
+	left:0px;
+	width:224px;
+	height:275px;
+    background-image: url(../images/numeric_keypad_g1to6/numeric_base.png);	
+
+}
+
+
+#numeric_keypad_G1to6  .downstate {
+   background-position: -48px 0px !important;
+   color:white;
+}
+
+
+#numeric_keypad_G1to6  .clear {
+	background-image:url(../images/numeric_keypad_g1to6/clear.png);
+}
+
+
+
+#numeric_keypad_G1to6 .blinkingcursor{
+	position:absolute;
+	width:1px;
+	height:28px;
+	left:3px;
+	top:8px;
+	background-image:url(../images/numeric_keypad_g1to6/cursor.gif);
+}
+
+
+
+#numeric_keypad_G1to6  .seven {top:62px;left:10px;}
+#numeric_keypad_G1to6  .eight {top:62px;left:62px;}
+#numeric_keypad_G1to6  .nine {top:62px;left:114px;}
+#numeric_keypad_G1to6 .four {top:114px;left:10px;}
+#numeric_keypad_G1to6 .five {top:114px;left:62px;}
+#numeric_keypad_G1to6  .six {top:114px;left:114px;}
+#numeric_keypad_G1to6 .one{top:166px;left:10px;}
+#numeric_keypad_G1to6 .two {top:166px;left:62px}
+#numeric_keypad_G1to6 .three {top:166px;left:114px;}
+#numeric_keypad_G1to6 .zero {top:218px;left:10px;}
+#numeric_keypad_G1to6 .period {top:218px;left:62px;font-size:28px !important;}
+#numeric_keypad_G1to6 .comma{top:218px;left:114px;	font-size:34px !important;}
+
+#numeric_keypad_G1to6 .backspace{top:62px;left:167px;}
+#numeric_keypad_G1to6 .clear{top:114px;left:167px;}
+
+#numeric_keypad_G1to6  .backspace {
+	background-image:url(../images/numeric_keypad_g1to6/backspace.png);
+}
+
+
+#numeric_keypad_G1to6 .number_symbol_key {
+	position:absolute;
+	width:48px;
+	height:48px;
+	background-image:url(../images/numeric_keypad_g1to6/keysprite.png);
+	font-family: 'reportschool', Arial, "MS Trebuchet", sans-serif;
+	/*font-family: Arial, "MS Trebuchet", sans-serif;*/
+	font-size:20px;
+	background-position:0px 0px ;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 48px;
+	font-color:black;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	 user-select: none;
+}
+
+
+#numeric_keypad_G1to6 .custom_symbol_key {
+	position:absolute;
+	width:48px;
+	height:48px;
+	background-position:0px 0px ;	
+}
+
+
+/*#numeric_keypad_G1to6 #EIGHT {top:64px;left:55px;}
+
+#numeric_keypad_G1to6 #NINE {top:64px;left:100px;}
+
+#numeric_keypad_G1to6 #BACKSPACE{top:64px;left:145px;}
+
+#math_keypad_G1to2 #CLEAR{top:109px;left:145px;}*/
+
+/********* math_keypad_G1to2 ******************************************************************/
+
+
+/* entire div */
+/*	
+#math_keypad_G1to2 {
+	position:absolute;
+	top:200px;
+	left:100px;
+	width:297px;
+	height:323px;
+	background-color:#B2F0FF;
+} */
+
+/* dragbar at top *//*
+#math_keypad_G1to2 .dragbar {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:297px;
+	height:25px;
+	background-image: url(../images/math_keypad_g1to2/topdragbar.png);
+}*/
+
+/* keypad *//*
+#math_keypad_G1to2 .display_and_pad {
+	position:absolute;
+	top:25px;
+	left:0px;
+	width:297px;
+	height:298px;
+	background-image: url(../images/math_keypad_g1to2/basecopy.png);	
+}*/
+/*
+#math_keypad_G1to2 #SEVEN {top:64px;left:10px;}
+
+#math_keypad_G1to2 #EIGHT {top:64px;left:55px;}
+
+#math_keypad_G1to2 #NINE {top:64px;left:100px;}
+
+#math_keypad_G1to2 #FOUR {top:109px;left:10px;}
+
+#math_keypad_G1to2 #FIVE {top:109px;left:55px;}
+
+#math_keypad_G1to2 #SIX {top:109px;left:100px;}
+
+#math_keypad_G1to2 #ONE {top:154px;left:10px;}
+	
+#math_keypad_G1to2 #TWO {top:154px;left:55px;}
+
+#math_keypad_G1to2 #THREE {top:154px;left:100px;}
+
+#math_keypad_G1to2 #ZERO {top:199px;left:10px;}
+
+#math_keypad_G1to2 #PERIOD {top:199px;left:55px;}
+
+#math_keypad_G1to2 #COMMA{top:199px;left:100px;	}
+
+
+#math_keypad_G1to2 #DOLLAR{top:64px;left:155px;}
+
+#math_keypad_G1to2 #CENT{top:64px;left:200px;}
+
+#math_keypad_G1to2 #FAHRENHEIT{top:109px;left:155px;}
+
+#math_keypad_G1to2 #CELSIUS{top:109px;left:200px;}
+
+#math_keypad_G1to2 #LESSTHAN{top:154px;left:155px;}
+
+#math_keypad_G1to2 #GREATERTHAN{top:154px;left:200px;}
+	
+#math_keypad_G1to2 #PLUS{top:199px;left:155px;}
+
+#math_keypad_G1to2 #MINUS{top:199px;left:200px;}
+
+#math_keypad_G1to2 #EQUAL{top:199px;left:245px;}
+
+
+#math_keypad_G1to2 #BACKSPACE{top:64px;left:245px;}
+
+#math_keypad_G1to2 #CLEAR{top:109px;left:245px;}
+
+#math_keypad_G1to2 #MAKEFRACTION{top:154px;left:245px;}	
+
+#math_keypad_G1to2 #ENTER{top:250px;left:200px;}	
+
+#math_keypad_G1to2 #SPACE{top:250px;left:10px;}
+
+*/
+
+/* .number_symbol_key, .symbol_key */
+
+/*
+.downstate {
+   background-position: -45px -1px !important;
+   color:white;
+}
+
+ #math_keypad_G1to2 .enter_key.downstate {
+   background-position: -90px -1px !important;
+}
+
+#math_keypad_G1to2 .space_key.downstate {
+   background-position: -190px -1px !important;
+}
+
+
+
+
+.pointer { 
+	cursor: pointer; 
+}
+
+*/
+/* special symbol key */
+
+
+/*
+#math_keypad_G1to2 .number_symbol_key {
+	position:absolute;
+	width:42px;
+	height:42px;
+	background-image:url(../images/math_keypad_g1to2/keysprite.png);
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	font-size:20px;
+	background-position:-1px -1px ;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 42px;
+	font-color:black;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	 user-select: none;
+	 
+}
+
+
+#math_keypad_G1to2 .custom_symbol_key {
+	position:absolute;
+	width:42px;
+	height:42px;
+	background-position:-1px -1px ;	
+}
+*/
+
+/* enter_key */ /*
+#math_keypad_G1to2 .enter_key {
+	position:absolute;
+	width:90px;
+	height:42px;
+	background-position:-1px -1px ;	
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	font-size:20px;
+	background-position:-1px -1px ;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 42px;
+	font-color:black;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	 user-select: none;
+}
+
+#math_keypad_G1to2 .space_key {
+	position:absolute;
+	width:187px;
+	height:42px;
+	background-position:-1px -1px ;	
+	background-position:-1px -1px ;	
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	font-size:20px;
+	background-position:-1px -1px ;	
+	text-align: center;
+	vertical-align: middle;
+	line-height: 42px;
+	font-color:black;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	 user-select: none;
+}
+
+			
+#math_keypad_G1to2  #BACKSPACE {
+	background-image:url(../images/math_keypad_g1to2/backspace.png);
+}
+
+#math_keypad_G1to2  #CLEAR {
+	background-image:url(../images/math_keypad_g1to2/clear.png);
+}
+
+
+#math_keypad_G1to2  #MAKEFRACTION {
+	background-image:url(../images/math_keypad_g1to2/fraction.png);
+}
+
+#math_keypad_G1to2  #ENTER {
+	background-image:url(../images/math_keypad_g1to2/enter.png);
+}
+
+#math_keypad_G1to2  #SPACE {
+	background-image:url(../images/math_keypad_g1to2/space.png);
+} */

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>send form data in header</title>
+</head>
+<body>
+
+<div class="send_data">send form data in header</div>
+
+<br>
+
+<form action="index.php" method="post" target="_blank" id="target">
+<textarea rows="20" cols="150" name="callBack" class="callBack">
+[{"name":"iteration","link":"cms/iteration_callback.json","method":"GET","produces":"application/json"},{"name":"curriculum_objective","link":"cms/Concept_XML_Export_100000280526.xml","method":"GET","produces":"text/xml"}]
+</textarea></form>
+
+<!-- Load scrips at end for faster page load -->
+<script src="js/libs/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/libs/jquery-migrate-1.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script type="text/javascript" charset="utf-8">
+	
+	var cms_app = {
+
+	    onReady: function() {
+			
+			$(".send_data").click( cms_app.sendData );
+			
+	    }, 
+		
+		sendData: function( event ) {
+			
+			$( "#target" ).submit();
+			
+			// var dataString = $(".form_callback").val();  
+			// 			
+			// 			$.ajax({  
+			// 			  type: "POST",  
+			// 			  url: "index.html",  
+			// 			  async : true,
+			// 			  data: dataString,  
+			// 			  success: function() {  
+			// 			    //window.location = "index.html";
+			// 			  }  
+			// 			});
+			
+		}
+	
+	};
+
+	$( document ).ready( cms_app.onReady );
+	
+	
+</script>
+
+</body>
+</html>

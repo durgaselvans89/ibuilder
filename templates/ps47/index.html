@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+<script type="text/javascript" src="js/rgbcolor.js"></script> 
+<script type="text/javascript" src="js/StackBlur.js"></script>
+<script type="text/javascript" src="js/canvg.js"></script> 
+	<title>Learning Object Iteration</title>
+ 		
+<style type="text/css" media="screen">
+body {
+    margin: 0px;
+    color: #333;
+}
+
+#wrapper {
+    position: absolute;
+    top: 10px;
+    right:0px;
+    width: 633px;
+    height: 442px;
+    font-size: 100%;
+}
+.txt span {
+	visibility: hidden;
+}
+#controls {
+	position: absolute;
+	bottom: 0px;
+	right: 10px;
+    width:100%;
+}
+#buttons{ float:right;}
+.content {
+    position: relative;
+}
+.numberline_object {
+    position:relative;
+    width:500px;
+    height:200px;
+}
+
+</style>
+	<script type="text/javascript" charset="utf-8">
+		function getUrlVars() {
+		    var vars = {};
+		    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		        vars[key] = value;
+		    });
+		    return vars;
+		}
+		
+		var media_path = getUrlVars()["media"];
+		var entryPoint = getUrlVars()["entryPoint"];
+		
+		
+		var mode = 'student';
+		
+		if ( mode == 'student' ) {
+			// add javascript for template mode
+		}
+						
+		if ( media_path != undefined ) {
+		    document.write('<script src="js/pageBuilder.js" type="text/javascript" charset="utf-8"><\/script>');
+		    document.write('<script src="js/lib/html2canvas.js" type="text/javascript" charset="utf-8"><\/script>');
+		    document.write('<script src="js/lib/raphael.js" type="text/javascript" charset="utf-8"><\/script>');
+		    document.write('<script src="js/lib/base.js" type="text/javascript" charset="utf-8"><\/script>');
+		    document.write('<script src="js/lib/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"><\/script>');
+		}
+		
+	</script>
+	
+</head>
+ 
+<body>
+<div id="wrapper">	
+	<div id="content"></div>
+</div>
+<div id="controls">
+    <div id="buttons">
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8">	
+	
+	// YOU
+	window.onload=function(){
+		page_builder_app.runAjax();
+	};
+	
+	var getProtocal = document.location.protocol;
+	
+	if ( getProtocal == 'https:' ) {
+		var protocalURL = 'https://c328740.ssl.cf1.rackcdn.com/mathjax/2.1-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+	} else {
+		var protocalURL = 'http://cdn.mathjax.org/mathjax/2.1-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+	}
+	
+	document.write('<script type="text/javascript" src="'+protocalURL+'"><\/script>');
+		
+</script>
+
+<script type="text/x-mathjax-config">
+//This turns most math to sans-serif
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  var TEX = MathJax.InputJax.TeX;
+  var PREFILTER = TEX.prefilterMath;
+  TEX.Augment({
+    prefilterMath: function (math,displaymode,script) {
+        if (math.match(/sqrt/)) {
+            return PREFILTER.call(TEX, math, displaymode,script);
+        }
+      return PREFILTER.call(TEX,"\\sf{"+math+"}",displaymode,script);
+    }
+  });
+});
+</script>
+
+</body>
+</html>

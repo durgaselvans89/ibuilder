@@ -1,0 +1,143 @@
+{
+   "id":100000287538,
+   "parentId":100000287518,
+   "shadowId":-1,
+   "associations":[
+      {
+         "id":100000287778,
+         "attributes":{
+            "DESCRIPTION":[
+               "ATP Test Asset"
+            ],
+            "UUID":[
+               "dummydata7"
+            ],
+            "URL":[
+               "dummydata7"
+            ],
+            "TITLE":[
+               "ATP eTool 7"
+            ]
+         },
+         "type":"ETOOL"
+      },
+      {
+         "id":100000287760,
+         "attributes":{
+            "DESCRIPTION":[
+               "ATP Test Asset"
+            ],
+            "UUID":[
+               "dummydata8"
+            ],
+            "URL":[
+               "dummydata8"
+            ],
+            "TITLE":[
+               "ATP eTool 8"
+            ]
+         },
+         "type":"ETOOL"
+      }
+   ],
+   "curriculumobjectives":{
+      "INTRODUCE":[
+         {
+            "id":100000280218,
+            "attributes":{
+               "THESAURUS_ID":[
+                  "CNCPT_DEF_e924f044-e4d2-4060-8c14-343dee3e021c"
+               ],
+               "DESCRIPTION":[
+                  "Make sense of your problem."
+               ],
+               "TITLE":[
+                  "GMP 1.1"
+               ]
+            },
+            "type":"N_CONCPT"
+         },
+         {
+            "id":100000280219,
+            "attributes":{
+               "THESAURUS_ID":[
+                  "CNCPT_DEF_ee3a478b-52cf-418c-a718-f04ee71e97bb"
+               ],
+               "DESCRIPTION":[
+                  "Reflect on your thinking as you solve your problem."
+               ],
+               "TITLE":[
+                  "GMP 1.2"
+               ]
+            },
+            "type":"N_CONCPT"
+         },
+         {
+            "id":100000280220,
+            "attributes":{
+               "THESAURUS_ID":[
+                  "CNCPT_DEF_d28e0fad-3eb9-4fcc-9907-74566d1fd722"
+               ],
+               "DESCRIPTION":[
+                  "Keep trying when your problem is hard."
+               ],
+               "TITLE":[
+                  "GMP 1.3"
+               ]
+            },
+            "type":"N_CONCPT"
+         },
+         {
+            "id":100000280221,
+            "attributes":{
+               "THESAURUS_ID":[
+                  "CNCPT_DEF_033822bb-003d-42bc-852e-fc6cf0cdf2ee"
+               ],
+               "DESCRIPTION":[
+                  "Check whether your answer makes sense."
+               ],
+               "TITLE":[
+                  "GMP 1.4"
+               ]
+            },
+            "type":"N_CONCPT"
+         },
+         {
+            "id":100000280405,
+            "attributes":{
+               "THESAURUS_ID":[
+                  "CNCPT_DEF_dd890093-545a-4868-bc11-ce4a3afd0c03"
+               ],
+               "DESCRIPTION":[
+                  "Divide within 100 fluently."
+               ],
+               "TITLE":[
+                  "3.OA.7_6"
+               ]
+            },
+            "type":"N_CONCPT"
+         },
+         {
+            "id":100000280406,
+            "attributes":{
+               "THESAURUS_ID":[
+                  "CNCPT_DEF_961e8320-540d-49a9-8e65-c202c2172d27"
+               ],
+               "DESCRIPTION":[
+                  "Assess the reasonableness of answers to problems."
+               ],
+               "TITLE":[
+                  "3.OA.8_1"
+               ]
+            },
+            "type":"N_CONCPT"
+         }
+      ]
+   },
+   "title":"Lesson 1-5 My Slate",
+   "description":null,
+   "entryPoint":null,
+   "uuid":null,
+   "mediaFile":null,
+   "containsMedia":false
+}

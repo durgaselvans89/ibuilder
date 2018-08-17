@@ -1,0 +1,133 @@
+/* Defult Styles */
+
+/* Fonts */
+@font-face { font-family: 'mheupperelemsans'; src: url('fonts/mheupperelemsans_em-regular-webfont.woff'); }
+@font-face { font-family: 'mheelemsanscondensed'; src: url('fonts/mheelemsanscondensed-regular-webfont.woff'); }
+
+body {
+	margin: 0px;
+	color: #333;
+	/*width: 100%;*/
+}
+
+#wrapper {
+	position: absolute;
+	top: 15px;
+	right: 10px;
+	width: 1000px;
+	height: 570px;
+	font-size: 100%;
+}
+
+.content {
+	position: relative;
+	padding: 50px 46px 50px 50px;
+}
+
+/* temp */
+input.type_entry {
+	position: static;
+	display: inline;
+	-moz-border-radius: 0px; /* Firefox */
+	-webkit-border-radius: 0px; /* Safari, Chrome */
+	border-radius: 0px; /* CSS3 */
+	border: 1px solid #333;
+	border-color: #ddd;
+	box-shadow: 0 0 10px #ddd;
+	background-color: transparent;
+	padding: 0px -20px 0px -20px !important;
+	margin: 0px;
+	text-align: center;
+	color: blue;
+	font-size: 1em;
+}
+
+input.type_entry:focus {
+	border-color: #9ecaed;
+	box-shadow: 0 0 10px #9ecaed;
+}
+/* END temp */
+
+/* Table Styles */
+
+table {
+	border-collapse:collapse;
+}
+
+#content[data-font="0"] td {
+	padding: 3px 8px 3px 8px;
+	border: solid 1px #333;
+}
+
+#content[data-font="1"] td {
+	padding: 4px 10px 4px 10px;
+	border: solid 2px #333;
+}
+
+#content[data-font="2"] td {
+	padding: 2px 12px 2px 12px;
+	border: solid 3px #333;
+}
+
+/* END Table Styles */
+
+/* Fonts */
+/* Line Height Issues in Hints */
+#content[data-grades="lower"] {
+	/*font-family: "mheupperelemsans", Arial, "MS Trebuchet", sans-serif;*/
+}
+
+#content[data-grades="lower"][data-font="0"] {
+	font-size: 1em;
+}
+
+#content[data-grades="lower"][data-font="1"] {
+	font-size: 1.5em;
+}
+
+#content[data-grades="lower"][data-font="2"] {
+	font-size: 2em;
+}
+
+#content[data-grades="mid"] {
+	/*font-family: "mheupperelemsans", Arial, "MS Trebuchet", sans-serif;*/
+}
+
+#content[data-grades="mid"][data-font="0"] {
+	font-size: 1em;
+}
+
+#content[data-grades="mid"][data-font="1"] {
+	font-size: 1.2em;
+}
+
+#content[data-grades="mid"][data-font="2"] {
+	font-size: 1.4em;
+}
+
+#content[data-grades="upper"] {
+	/*font-family: "mheupperelemsans", Arial, "MS Trebuchet", sans-serif;*/
+}
+
+#content[data-grades="upper"][data-font="0"] {
+	font-size: 1em;
+}
+
+#content[data-grades="upper"][data-font="1"] {
+	font-size: 1.2em;
+}
+
+#content[data-grades="upper"][data-font="2"] {
+	font-size: 1.4em;
+}
+
+.title { font-family: 'mheupperelemsans'; width: 350px; left: 50px; top: 50px; }
+
+.content_box { font-family: 'mheupperelemsans'; width: 350px; left: 50px; top: 125px; }
+
+.hand {
+	font-family: 'mheupperelemsans', Arial, "MS Trebuchet", sans-serif;
+}
+
+
+
